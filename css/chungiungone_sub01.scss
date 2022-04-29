@@ -1,0 +1,112 @@
+// 반응형 변수
+$fz14 : #{'min(1.4em,14px)'};
+$fz18 : #{'min(1.8em,18px)'};
+$fz24 : #{'min(2.4em,24px)'};
+$fz36 : #{'min(3.6em,36px)'};
+$h20 : #{'min(0.5rem,20px)'};
+$h40 : #{'min(1rem,40px)'};
+$h80 : #{'min(2rem,80px)'};
+$h90 : #{'min(2.25rem,90px)'};
+$h120 : #{'min(3rem,120px)'};
+$h200 : #{'min(5rem,200px)'};
+
+@font-face{
+    font-family: 'GangwonEdu_OTFLightA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin font($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+    }
+}
+@include font(ari,'JSArirang.ttf');
+@include font(aripp,'JSArirangPPURI.ttf');
+@include font(noto,'NotoSansKR-Regular.otf');
+@include font(dx,'DXSeNB-KSCpc-EUC-H.ttf');
+
+@mixin grid($dev){
+    @if($dev=='tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 80%;
+        max-width: 1080px;
+    }
+    margin: 0 auto;
+}
+// 반응형 미디어쿼리
+@mixin tab {
+    @media (max-width: 1024px) and (min-width: 0px){
+        @content;
+    }
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin bgset {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+        color: #222;
+    }
+}
+.image{
+    @include bgset;
+}
+
+.mainWrap{
+    @include bgset;
+    margin-top: #{'min(4rem,160px)'};
+    background-image: url('../images/sub01_img/sub01_main.jpg');
+    padding: #{'min(5rem,200px)'} 0 $h80;
+    main{
+        @include grid('pc');
+        text-align: center;
+        padding-bottom: $h90;
+        border-bottom: 1px solid #666;
+        .title{
+            position: relative;
+            width: calc(100% / 12 * 3.3);
+            margin-top: #{'min(-2rem,-80px)'};
+            margin-left: auto;
+            margin-right: #{'min(4rem,160px)'};
+            .image{
+                height: #{'min(4rem,160px)'};
+                background-size: contain;
+                background-image: url('../images/sub01_img/main_title.png');
+            }
+            h2{
+                position: absolute;
+                color: #fff;
+                text-shadow: 2px 2px 10px #000;
+                font-family: aripp;
+                font-size: $fz36;
+                line-height: #{'min(1.25rem,50px)'};
+                top: $h40; left: #{'min(1.25rem,50px)'};
+            }
+        }
+        p{
+            width: calc(100% / 12 * 5);
+            margin-left: auto;
+            margin-right: $h90;
+            margin-top: $h40;
+            font-size: #{'min(2em,20px)'};
+            font-family: 'GangwonEdu_OTFLightA';
+            line-height: $h40;
+            font-weight: 700;
+        }
+    }
+}
