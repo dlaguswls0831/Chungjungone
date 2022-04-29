@@ -1,0 +1,252 @@
+// 반응형 변수
+$fz14 : #{'min(1.4em,14px)'};
+$fz18 : #{'min(1.8em,18px)'};
+$fz24 : #{'min(2.4em,24px)'};
+$fz36 : #{'min(3.6em,36px)'};
+$h20 : #{'min(0.5rem,20px)'};
+$h40 : #{'min(1rem,40px)'};
+$h80 : #{'min(2rem,80px)'};
+$h90 : #{'min(2.25rem,90px)'};
+$h120 : #{'min(3rem,120px)'};
+$h200 : #{'min(5rem,200px)'};
+
+@font-face{
+    font-family: 'GangwonEdu_OTFLightA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin font($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+    }
+}
+@include font(ari,'JSArirang.ttf');
+@include font(aripp,'JSArirangPPURI.ttf');
+@include font(noto,'NotoSansKR-Regular.otf');
+@include font(dx,'DXSeNB-KSCpc-EUC-H.ttf');
+
+@mixin grid($dev){
+    @if($dev=='tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 80%;
+        max-width: 1080px;
+    }
+    margin: 0 auto;
+}
+// 반응형 미디어쿼리
+@mixin tab {
+    @media (max-width: 1024px) and (min-width: 0px){
+        @content;
+    }
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin bgset {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+        position: relative;
+        overflow-x: hidden;
+        color: #222;
+    }
+}
+.image{
+    @include bgset;
+}
+
+.hdrWrap{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    top: 0;
+    header{
+        @include grid('pc');
+        @include flex;
+        .logo{
+            width: calc(100% / 12 * 2);
+            @include bgset;
+            background-image: url('../images/index.img/cjo_logo.png');
+            height: $h80;
+            a{
+                width: 100%;
+                height: 100%;
+                display: block;
+                cursor: pointer;
+            }
+        }
+        nav{
+            @include flex;
+            width: calc(100% / 12 * 6);
+            line-height: $h80;
+            font-family: noto;
+            text-transform: uppercase;
+            .navLeft{
+                @include flex;
+                width: calc(100% / 6 * 4);
+                font-size: $fz18;
+                h4{
+                    transition: all 0.5s;
+                    &:hover{
+                        color: #293d85;
+                        font-size: #{'min(2em,20px)'};
+                        font-weight: 700;
+                    }
+                }
+            }
+            .navRight{
+                @include flex;
+                width: calc(100% / 6 * 1.2);
+                font-size: $fz24;
+            }
+        }
+    }
+}
+
+
+.navBoxWrap{
+    background-color: #ccc;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    top: $h80;
+    .navBox{
+        @include grid('pc');
+        nav{
+            width: calc(100% / 12 * 3);
+            @include flex;
+            margin-left: auto;
+            font-size: $fz14;
+            line-height: $h80;
+            text-transform: uppercase;
+            font-family: noto;
+            color: #fff;
+            h4{
+                transition: all 0.5s;
+                &:hover{
+                    color: #293d85;
+                    font-size: #{'min(1.8em,18px)'};
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+// ftr
+.ftrWrap{
+    background-color: #e3e3e3;
+    padding: $h40 0 $h80;
+    footer{
+        @include grid('pc');
+        font-family: noto;
+        .ftrTop{
+            @include flex;
+            nav{
+                @include flex;
+                width: calc(100% / 12 * 6);
+                h4{
+                    font-size: $fz18;
+                    line-height: $h40;
+                    color: #666;
+                    cursor: pointer;
+                    transition:  color 0.5s;
+                    &:hover{
+                        color: #222;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .sns{
+                @include flex;
+                width: calc(100% / 12 * 2);
+                i{
+                    font-size: $fz24;
+                    line-height: $h40;
+                }
+            }
+        }
+        .ftrBtm{
+            @include flex;
+            margin-top: 40px;
+            font-size: $fz14;
+            line-height: $h40;
+            .logo{
+                width: calc(100% / 12 * 3);
+                height: $h120;
+                @include bgset;
+                background-image: url('../images/index.img/ftr_logo.png');
+            }
+            .info{
+                width: calc(100% / 12 * 8.5);
+                .top{
+                    width: calc(100% / 8.5 * 7.5);
+                    @include flex;
+                    li{
+                        border-left: 1px solid #666;
+                        padding: 0 10px;
+                        &:nth-child(1){
+                            border-left: none;
+                        }
+                    }
+                }
+                .mid{
+                    @include flex;
+                    margin-top: 10px;
+                    li{
+                        border-left: 1px solid #666;
+                        padding: 0 10px;
+                        &:nth-child(1){
+                            border-left: none;
+                        }
+                    }
+                }
+                .btm{
+                    @include flex;
+                    li{
+                        &:nth-child(1){
+                            width: calc(100% / 8.5 * 3.5);
+                            color: #666;
+                            padding-left: 10px;
+                            line-height: $h20;
+                            margin-top: $h20;
+                        }
+                        &:nth-child(2){
+                            width: calc(100% / 8.5 * 1.5);
+                            @include flex;
+                            .image{
+                                width: calc(100% / 3);
+                                height: $h40;
+                                background-size: contain;
+                                @for $i from 1 through 3{
+                                    &.i#{$i}{
+                                        background-image: url('../images/index.img/ftr_icon0#{$i}.png');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
