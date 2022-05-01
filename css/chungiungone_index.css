@@ -1,0 +1,751 @@
+@font-face {
+  font-family: 'GangwonEdu_OTFLightA';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ari";
+  src: url("./fonts/JSArirang.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "aripp";
+  src: url("./fonts/JSArirangPPURI.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "noto";
+  src: url("./fonts/NotoSansKR-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "dx";
+  src: url("./fonts/DXSeNB-KSCpc-EUC-H.ttf") format("truetype");
+}
+
+html {
+  font-size: 3vw;
+}
+
+html body {
+  font-size: 0.7vw;
+  position: relative;
+  overflow-x: hidden;
+  color: #222;
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mainWrap {
+  margin-top: min(2rem,80px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../images/index.img/index_main_img.jpg");
+  padding: min(5rem,200px) 0 min(4rem,160px);
+}
+
+.mainWrap main {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.mainWrap main .title {
+  position: relative;
+  width: calc(100% / 12 * 3);
+  margin-left: min(1rem,40px);
+}
+
+.mainWrap main .title .image {
+  background-image: url("../images/index.img/main_bg.png");
+  height: min(5rem,200px);
+}
+
+.mainWrap main .title h2 {
+  position: absolute;
+  font-size: min(6em,60px);
+  line-height: min(2rem,80px);
+  text-align: center;
+  font-family: dx;
+  top: min(0.375rem,15px);
+  left: min(0.5rem,20px);
+}
+
+@-webkit-keyframes ani {
+  0% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  50% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+}
+
+@keyframes ani {
+  0% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+  50% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  100% {
+    -webkit-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+}
+
+@-webkit-keyframes mo {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(48deg);
+            transform: rotate(48deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes mo {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(48deg);
+            transform: rotate(48deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes mov {
+  0% {
+    -webkit-transform: rotate(280deg);
+            transform: rotate(280deg);
+  }
+  50% {
+    -webkit-transform: rotate(300deg);
+            transform: rotate(300deg);
+  }
+  100% {
+    -webkit-transform: rotate(280deg);
+            transform: rotate(280deg);
+  }
+}
+
+@keyframes mov {
+  0% {
+    -webkit-transform: rotate(280deg);
+            transform: rotate(280deg);
+  }
+  50% {
+    -webkit-transform: rotate(300deg);
+            transform: rotate(300deg);
+  }
+  100% {
+    -webkit-transform: rotate(280deg);
+            transform: rotate(280deg);
+  }
+}
+
+.cntWrap {
+  margin-top: min(3rem,120px);
+}
+
+.cntWrap.cntWrap04 {
+  position: relative;
+  z-index: 2;
+  background-color: #dfdfdf;
+  padding: min(1rem,40px) 0 min(3rem,120px);
+}
+
+.cntWrap.cntWrap04 .Wrapimg {
+  width: 100%;
+  position: absolute;
+  height: min(8rem,320px);
+  bottom: min(3rem,120px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/index.img/cnt04_Bg.png");
+}
+
+.cntWrap .content {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.cntWrap .content.cnt01 header {
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  position: relative;
+}
+
+.cntWrap .content.cnt01 header .images .image {
+  background-size: contain;
+  position: absolute;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.cntWrap .content.cnt01 header .images .image.i1 {
+  -webkit-animation-name: ani;
+          animation-name: ani;
+  width: calc(100% / 12 * 2.5);
+  height: min(5rem,200px);
+  right: min(1rem,40px);
+  top: min(1rem,40px);
+}
+
+.cntWrap .content.cnt01 header .images .image.i2 {
+  -webkit-animation-name: mo;
+          animation-name: mo;
+  -webkit-transform: rotate(18deg);
+          transform: rotate(18deg);
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  width: calc(100% / 12 * 2.8);
+  height: min(9rem,360px);
+  left: min(1rem,40px);
+  bottom: min(1rem,40px);
+}
+
+.cntWrap .content.cnt01 header .images .image.i3 {
+  -webkit-animation-name: mov;
+          animation-name: mov;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  width: calc(100% / 12 * 3);
+  height: min(6.5rem,260px);
+  right: 0;
+  bottom: min(0.5rem,20px);
+}
+
+.cntWrap .content.cnt01 header .images .image.i1 {
+  background-image: url("../images/index.img/cnt01_01.png");
+}
+
+.cntWrap .content.cnt01 header .images .image.i2 {
+  background-image: url("../images/index.img/cnt01_02.png");
+}
+
+.cntWrap .content.cnt01 header .images .image.i3 {
+  background-image: url("../images/index.img/cnt01_03.png");
+}
+
+.cntWrap .content.cnt01 header .texts {
+  padding: min(5rem,200px) 0 min(2rem,80px);
+}
+
+.cntWrap .content.cnt01 header .texts h2 {
+  line-height: min(1rem,40px);
+}
+
+.cntWrap .content.cnt01 header .texts h2 span {
+  color: #293d85;
+}
+
+.cntWrap .content.cnt01 header .texts h5:nth-child(2) {
+  font-size: min(1.8em,18px);
+  line-height: min(0.5rem,20px);
+  color: #666;
+}
+
+.cntWrap .content.cnt01 header .texts h5:nth-child(3) {
+  font-size: min(2.4em,24px);
+  line-height: min(0.5rem,20px);
+  font-weight: 700;
+  margin-top: min(1rem,40px);
+}
+
+.cntWrap .content.cnt01 header .texts p {
+  font-family: 'GangwonEdu_OTFLightA';
+  font-weight: 700;
+  margin: 0 auto;
+  font-size: min(1.8em,18px);
+  line-height: min(0.5rem,20px);
+}
+
+.cntWrap .content.cnt01 header .texts p:nth-child(4) {
+  width: calc(100% / 12 * 6);
+  margin-top: min(2rem,80px);
+}
+
+.cntWrap .content.cnt01 header .texts p:nth-last-child(1) {
+  width: calc(100% / 12 * 4.8);
+  margin-top: min(0.5rem,20px);
+}
+
+.cntWrap .content.cnt01 section article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: min(3rem,120px);
+}
+
+.cntWrap .content.cnt01 section article:nth-child(1) .images {
+  position: relative;
+}
+
+.cntWrap .content.cnt01 section article:nth-child(1) .images .image {
+  position: absolute;
+}
+
+.cntWrap .content.cnt01 section article:nth-child(1) .images .image.i1 {
+  width: calc(100% / 6 * 2);
+  height: min(9rem,360px);
+  background-image: url("../images/index.img/cnt01_art01_01.png");
+  top: min(4rem,160px);
+  left: min(-2.5rem,-100px);
+}
+
+.cntWrap .content.cnt01 section article:nth-child(1) .images .image.i2 {
+  width: calc(100% / 6 * 5);
+  background-size: contain;
+  height: min(9rem,360px);
+  background-image: url("../images/index.img/cnt01_art01_02.png");
+  top: min(5rem,200px);
+  left: 0;
+  z-index: 1;
+}
+
+.cntWrap .content.cnt01 section article:nth-child(1) .images .image.i3 {
+  background-size: contain;
+  height: min(6.5rem,260px);
+  width: calc(100% / 6 * 2);
+  background-image: url("../images/index.img/cnt01_art01_03.png");
+  top: min(4rem,160px);
+  right: 30px;
+}
+
+.cntWrap .content.cnt01 section article:nth-child(1) .texts p {
+  height: min(4.5rem,180px);
+}
+
+.cntWrap .content.cnt01 section article:nth-child(2) {
+  direction: rtl;
+}
+
+.cntWrap .content.cnt01 section article:nth-child(2) .images {
+  position: relative;
+}
+
+.cntWrap .content.cnt01 section article:nth-child(2) .images .image {
+  position: absolute;
+}
+
+.cntWrap .content.cnt01 section article:nth-child(2) .images .image.i1 {
+  width: calc(100% / 6 * 2);
+  height: min(5rem,200px);
+  background-size: contain;
+  background-image: url("../images/index.img/cnt01_art02_01.png");
+  left: min(1rem,40px);
+  bottom: min(4rem,160px);
+}
+
+.cntWrap .content.cnt01 section article:nth-child(2) .images .image.i2 {
+  width: 100%;
+  height: min(9rem,360px);
+  background-image: url("../images/index.img/cnt01_art02_02.png");
+  bottom: min(1rem,40px);
+  z-index: 1;
+}
+
+.cntWrap .content.cnt01 section article:nth-child(2) .images .image.i3 {
+  width: calc(100% / 6 * 2);
+  height: min(4.5rem,180px);
+  background-size: contain;
+  background-image: url("../images/index.img/cnt01_art02_03.png");
+  right: min(-1rem,-40px);
+  bottom: min(2rem,80px);
+}
+
+.cntWrap .content.cnt01 section article:nth-child(2) .texts {
+  direction: ltr;
+}
+
+.cntWrap .content.cnt01 section article:nth-child(2) .texts p {
+  height: min(4rem,160px);
+}
+
+.cntWrap .content.cnt01 section article .images {
+  width: calc(100% / 12 * 6);
+}
+
+.cntWrap .content.cnt01 section article .images .imgBg .ovrGrid {
+  height: min(16rem,640px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cntWrap .content.cnt01 section article .images .imgBg .ovrGrid.ovr01 {
+  margin-left: min(calc((100vw - 1080px) / -2),calc((100vw - 80vw) / -2));
+  background-image: url("../images/index.img/cnt01_artBg01.png");
+}
+
+.cntWrap .content.cnt01 section article .images .imgBg .ovrGrid.ovr02 {
+  margin-right: min(calc((100vw - 1080px) / -2),calc((100vw - 80vw) / -2));
+  background-image: url("../images/index.img/cnt01_artBg02.png");
+}
+
+.cntWrap .content.cnt01 section article .texts {
+  width: calc(100% / 12 * 4);
+  margin-top: min(3rem,120px);
+  font-family: aripp;
+  text-align: center;
+}
+
+.cntWrap .content.cnt01 section article .texts h3 {
+  font-size: min(5em,50px);
+  line-height: min(2rem,80px);
+  border-bottom: 1px solid #666;
+}
+
+.cntWrap .content.cnt01 section article .texts h5 {
+  margin-top: min(2rem,80px);
+  font-size: min(2.4em,24px);
+  line-height: min(1rem,40px);
+}
+
+.cntWrap .content.cnt01 section article .texts h5 span {
+  color: #293d85;
+}
+
+.cntWrap .content.cnt01 section article .texts p {
+  margin-top: 40px;
+  font-family: 'GangwonEdu_OTFLightA';
+  font-weight: 700;
+  font-size: min(1.8em,18px);
+  line-height: min(0.5rem,20px);
+  overflow: hidden;
+}
+
+.cntWrap .content.cnt01 section article .texts .btn {
+  width: calc(100% / 4 * 2);
+  margin: 0 auto;
+  margin-top: min(0.5rem,20px);
+  cursor: pointer;
+}
+
+.cntWrap .content.cnt01 section article .texts .btn .image {
+  height: min(2rem,80px);
+  background-image: url("../images/index.img/btn.png");
+}
+
+.cntWrap .content.cnt01 section article .texts .btn .image span {
+  line-height: min(2rem,80px);
+  font-size: min(2.4em,24px);
+  text-transform: uppercase;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.cntWrap .content.cnt02 {
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  padding: min(1rem,40px) 0 min(2rem,80px);
+}
+
+.cntWrap .content.cnt02 header {
+  width: calc(100% / 12 * 5);
+  margin: 0 auto;
+}
+
+.cntWrap .content.cnt02 header .image {
+  background-size: contain;
+  background-image: url("../images/index.img/cnt02_hdr.png");
+  height: min(5rem,200px);
+  padding: min(1rem,40px) 0 min(1rem,40px);
+}
+
+.cntWrap .content.cnt02 header .image h2 span {
+  color: #293d85;
+}
+
+.cntWrap .content.cnt02 section {
+  margin-top: min(1rem,40px);
+}
+
+.cntWrap .content.cnt02 section article {
+  width: calc(100% / 12 * 10);
+  margin: 0 auto;
+}
+
+.cntWrap .content.cnt02 section article video {
+  width: 100%;
+}
+
+.cntWrap .content.cnt03 header h2 {
+  text-transform: capitalize;
+  line-height: min(2rem,80px);
+}
+
+.cntWrap .content.cnt03 header h2 span {
+  color: #293d85;
+}
+
+.cntWrap .content.cnt03 header p {
+  margin-top: min(0.5rem,20px);
+  font-family: 'GangwonEdu_OTFLightA';
+  font-weight: 700;
+  font-size: min(2.4em,24px);
+  line-height: min(1rem,40px);
+}
+
+.cntWrap .content.cnt03 section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: min(2rem,80px);
+}
+
+.cntWrap .content.cnt03 section .artImg {
+  width: calc(100% / 12 * 7 - 20px);
+  position: relative;
+}
+
+.cntWrap .content.cnt03 section .artImg .ovrGrid {
+  margin-left: min(calc((100vw - 1080px) / -2),calc((100vw - 80vw) / -2));
+  height: min(13.75rem,550px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/index.img/cnt03_imgBg.png");
+}
+
+.cntWrap .content.cnt03 section .artImg .images {
+  width: calc(100% / 7 * 5.5);
+  position: absolute;
+  top: min(1rem,40px);
+}
+
+.cntWrap .content.cnt03 section .artImg .images .image {
+  width: 100%;
+  height: min(12rem,480px);
+  background-color: #ccc;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.cntWrap .content.cnt03 section .artImg .images .image.i1 {
+  background-image: url("../images/index.img/cnt03_img01.jpg");
+}
+
+.cntWrap .content.cnt03 section .artImg .images .image.i2 {
+  background-image: url("../images/index.img/cnt03_img02.jpg");
+}
+
+.cntWrap .content.cnt03 section .artImg .images .image.i3 {
+  background-image: url("../images/index.img/cnt03_img03.jpg");
+}
+
+.cntWrap .content.cnt03 section .artImg .images .image.i4 {
+  background-image: url("../images/index.img/cnt03_img04.jpg");
+}
+
+.cntWrap .content.cnt03 section .artImg .images .image.i5 {
+  background-image: url("../images/index.img/cnt03_img05.jpg");
+}
+
+.cntWrap .content.cnt03 section .artTxt {
+  width: calc(100% / 12 * 4 - 20px);
+  font-family: 'GangwonEdu_OTFLightA';
+  font-weight: 700;
+  margin-top: min(1rem,40px);
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts {
+  position: relative;
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts .txt {
+  background-color: #fff;
+  position: absolute;
+  height: min(12.5rem,500px);
+  overflow: hidden;
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts .txt h3 {
+  font-size: min(3.4em,34px);
+  line-height: min(1rem,40px);
+  border-left: 1px solid #666;
+  padding-left: min(0.5rem,20px);
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts .txt .txtMid {
+  width: calc(100% / 4 * 2.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 40px;
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts .txt .txtMid h5 {
+  font-size: min(1.8em,18px);
+  line-height: min(0.5rem,20px);
+  border-left: 1px solid #666;
+  padding: 0 10px;
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts .txt .txtBtm {
+  margin-top: min(1rem,40px);
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts .txt .txtBtm p {
+  border-left: 1px solid #666;
+  padding-left: min(0.5rem,20px);
+  font-size: min(1.8em,18px);
+  line-height: min(0.5rem,20px);
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts .txt .txtBtm .btn {
+  width: calc(100% / 4 * 1.5);
+  margin-top: min(0.5rem,20px);
+  margin-left: min(0.5rem,20px);
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts .txt .txtBtm .btn .image {
+  width: 100%;
+  height: min(2rem,80px);
+  background-image: url("../images/index.img/btn.png");
+  font-weight: normal;
+  text-align: center;
+}
+
+.cntWrap .content.cnt03 section .artTxt .texts .txt .txtBtm .btn .image span {
+  font-family: aripp;
+  font-size: min(1.8em,18px);
+  line-height: min(2rem,80px);
+  text-transform: uppercase;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.cntWrap .content.cnt03 section .btn {
+  width: calc(100% / 12);
+  margin: auto 0;
+  margin-left: 10px;
+}
+
+.cntWrap .content.cnt03 section .btn .image {
+  cursor: pointer;
+  background-size: contain;
+  background-image: url("../images/index.img/slide_btn.png");
+  height: min(1.5rem,60px);
+}
+
+.cntWrap .content.cnt04 header h2 {
+  text-transform: uppercase;
+  line-height: min(2rem,80px);
+}
+
+.cntWrap .content.cnt04 header h2 span {
+  color: #293d85;
+}
+
+.cntWrap .content.cnt04 header p {
+  font-family: 'GangwonEdu_OTFLightA';
+  font-size: min(2.4em,24px);
+  line-height: min(1rem,40px);
+  font-weight: 700;
+}
+
+.cntWrap .content.cnt04 section {
+  margin-top: min(1rem,40px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cntWrap .content.cnt04 section article {
+  width: 50%;
+  margin: 0px 10px;
+}
+
+.cntWrap .content.cnt04 section article .image {
+  height: min(7rem,280px);
+}
+
+.cntWrap .content.cnt04 section article .image.i1 {
+  background-image: url("../images/index.img/cnt04_img01.jpg");
+}
+
+.cntWrap .content.cnt04 section article .image.i2 {
+  background-image: url("../images/index.img/cnt04_img02.jpg");
+}
+
+.cntWrap .content.cnt04 .btn {
+  width: calc(100% / 12 * 2);
+  margin: 0 auto;
+  margin-top: min(1.5rem,60px);
+  position: relative;
+  z-index: 4;
+}
+
+.cntWrap .content.cnt04 .btn .image {
+  cursor: pointer;
+  width: 100%;
+  height: min(2rem,80px);
+  background-image: url("../images/index.img/btn.png");
+  text-align: center;
+}
+
+.cntWrap .content.cnt04 .btn .image span {
+  font-family: aripp;
+  font-size: min(2.4em,24px);
+  line-height: min(2rem,80px);
+  text-transform: uppercase;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.cntWrap .content header {
+  font-family: aripp;
+  text-align: center;
+}
+
+.cntWrap .content header h2 {
+  font-size: min(5em,50px);
+}
+/*# sourceMappingURL=chungiungone_index.css.map */
