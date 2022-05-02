@@ -12,6 +12,20 @@
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/jquery-ui.min.js"></script>
     <script src="./js/common.js"></script>
+    <script>
+        $(function(){
+            var w=parseInt($('.bars').css('width'));
+            $('.bar').draggable({
+                containment:'.bars',
+                axis:'x',
+                drag:function(){
+                    var p=$(this).position().left;
+                    var ba=p/w*108.3;
+                    $('.artGroup').css('margin-left',-ba+'%');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <!-- hdr -->
@@ -19,11 +33,14 @@
     <!-- main -->
     <div class="mainWrap">
         <main>
-            <div class="title">
-                <div class="image"></div>
-                <h2>오늘을 더 맛있게<br>청정원</h2>
+            <div class="image i1"></div>
+            <div class="texts">
+                <div class="title">
+                    <div class="image i2"></div>
+                    <h2>오늘을 더 맛있게<br>청정원</h2>
+                </div>
+                <p>음식을 둘러싼 당신의 일상을 더욱 맛있고 풍요롭게 만드는 <br>라이프 푸드 (Life Food) 브랜드, 청정원 입니다.</p>
             </div>
-            <p>음식을 둘러싼 당신의 일상을 더욱 맛있고 풍요롭게 만드는 <br>라이프 푸드 (Life Food) 브랜드, 청정원 입니다.</p>
         </main>
     </div>
     <!-- cnt01 -->
@@ -64,135 +81,139 @@
         <div class="content cnt02">
             <header>
                 <div class="image"></div>
-                <h2>청정원의 대표 라인브랜드</h2>
+                <h2>청정원의 대표<br>라인브랜드</h2>
             </header>
             <section>
                 <article>
                     <div class="image i1"></div>
                     <div class="texts">
                         <div class="txtLeft">
-                            <div class="brandLogo"></div>
+                            <div class="brandLogo i1"></div>
+                            <h3>호밍스 청송식 닭불고기</h3>
                             <div class="txtMid">
-                                <h3>호밍스 청송식 닭불고기</h3>
                                 <h5>브랜드 호밍스</h5>
                                 <h5>보관 냉동</h5>
                                 <h5>유통기한 365일</h5>
                             </div>
                             <p>요즘은 편의점이나 가까운 마트에서도 다양한 와인을 비교적 저렴한 가격대로 만날 수 있어서 저녁에 와인 한 잔 씩 즐기는 분들이 많아졌다고 해요. 아마 와인은 주로 치즈나 육포 등과 함께 드시는 분들이 많으실 텐데요 ~ 오늘은 좀 더 색다르게 즐길 수 있는 와인 안주를 추천해 드릴게요! 바로 매콤한 닭고기와 향긋한 선드라이 토마토를 함께 올린 카나페의 조합은 다양한 식감과 향으로 와인과 환상 조합을 이룬답니다. 모처럼 더운 여름 밤 시원하게 풀고 싶다면, 오늘 정원이와 함께 맛진 한상 차려봐요!</p>
                         </div>
-                        <txtRight>
-                            <div class="image"></div>
-                        </txtRight>
+                        <div class="txtRight">
+                            <div class="image i1"></div>
+                        </div>
                     </div>
                 </article>
                 <article>
                     <div class="image i2"></div>
                     <div class="texts">
                         <div class="txtLeft">
-                            <div class="brandLogo"></div>
+                            <div class="brandLogo i2"></div>
+                            <h3>안주야 홈펍 닭껍질튀김</h3>
                             <div class="txtMid">
-                                <h3>안주야 홈펍 닭껍질튀김</h3>
                                 <h5>브랜드 안주야</h5>
-                                <h5>보관 편의식(냉동)</h5>
+                                <h5>보관 냉동</h5>
                                 <h5>유통기한 270일</h5>
                             </div>
                             <p>닭은 찜닭, 닭볶음탕, 치킨 등 다양한 요리의 재료로써 우리에게 굉장히 친숙한 재료죠. 또한, 닭고기부터 닭근위, 닭발, 닭껍질까지 버릴 것 하나 없어서 고마운 재료이기도 한데요. 특히 모든 술이랑도 잘 어울려 안주로도 많이 활용됩니다. 여러분은 어떤 조합을 가장 좋아하시나요? 정원이는 치킨과 맥주, 매콤한 닭발과 소주 등 여러 가지 조합 모두 사랑하지만, 그 중 가장 매력적인 조합은 닭껍질튀김과 맥주라고 생각해요. 그 어떤 튀김보다 바삭함을 자랑하는 닭껍질 튀김과 시원한 맥주는 참을 수 없는 조합 아닐까요? 오늘은 정원이가 고소하고 바삭바삭한 닭껍질 튀김과 정원이표 와사비마요 소스를 만드는 방법을 알려 드릴게요. 한 번 맛보면 그 매력에서 헤어나올 수 없을 거예요~</p>
                         </div>
-                        <txtRight>
-                            <div class="image"></div>
-                        </txtRight>
+                        <div class="txtRight">
+                            <div class="image i2"></div>
+                        </div>
                     </div>
                 </article>
                 <article>
                     <div class="image i3"></div>
                     <div class="texts">
                         <div class="txtLeft">
-                            <div class="brandLogo"></div>
+                            <div class="brandLogo i3"></div>
+                            <h3>순창 태양초 덜매운고추장</h3>
                             <div class="txtMid">
-                                <h3>순창 태양초 덜매운고추장</h3>
                                 <h5>브랜드 순창</h5>
                                 <h5>보관 상온</h5>
                                 <h5>유통기한 18개월</h5>
                             </div>
                             <p>‘해초’ 하면 어렸을 적 정원이는 미역과 김 밖에 몰랐었어요! 그러나 무시하면 안 되는 해초의 놀라운 능력이 정원이가 해초를 좋아하게 만들었답니다. 바로 몸 속 중금속을 배출시키는 능력과, 빈혈에 참 좋은 피를 맑게 해주는 능력이에요! 정원이는 빈혈에 시달려서 건강식단으로 해초를 철마다 먹었답니다. 이런 건강식단인 해초로 만든 해초비빔밥이 어떤 맛일지 궁금하지 않으신가요? 만들기도 정말 쉽고 간단해서 세상에 이런 건강식단이 있나 싶기도 해요! 그럼 이제부터 본격적으로 해초비빔밥 레시피를 시작해볼까요?</p>
                         </div>
-                        <txtRight>
-                            <div class="image"></div>
-                        </txtRight>
+                        <div class="txtRight">
+                            <div class="image i3"></div>
+                        </div>
                     </div>
                 </article>
                 <article>
                     <div class="image i4"></div>
                     <div class="texts">
                         <div class="txtLeft">
-                            <div class="brandLogo"></div>
+                            <div class="brandLogo i4"></div>
+                            <h3>햇살담은 자연숙성 맛간장 국찌개용</h3>
                             <div class="txtMid">
-                                <h3>햇살담은 자연숙성 맛간장 국찌개용</h3>
                                 <h5>브랜드 햇살담은</h5>
                                 <h5>보관 상온</h5>
                                 <h5>유통기한 24개월</h5>
                             </div>
                             <p>매서운 칼바람이 부는 퇴근길, 이럴 땐 여럿이 둘러앉아 술과 함께 따끈한 안주를 먹으며 하루의 회포를 푸는 것이 행복이죠~ 저 정원이는 많고 많은 술안주 중에서도 겨울엔 따끈한 탕이나 찜요리가 많이 생각나는 것 같아요! 그래서 오늘은 저녁메뉴로 좋은 간단한요리, 간장 조개찜 만드는 법을 소개하고자 하는데요. 맛간장을 활용한 간단한 조개찜 만들기를 지금부터 만나보시죠</p>
                         </div>
-                        <txtRight>
-                            <div class="image"></div>
-                        </txtRight>
+                        <div class="txtRight">
+                            <div class="image i4"></div>
+                        </div>
                     </div>
                 </article>
                 <article>
                     <div class="image i5"></div>
                     <div class="texts">
                         <div class="txtLeft">
-                            <div class="brandLogo"></div>
+                            <div class="brandLogo i5"></div>
+                            <h3>맛선생 국내산 생강</h3>
                             <div class="txtMid">
-                                <h3>맛선생 국내산 생강</h3>
                                 <h5>브랜드 맛선생</h5>
                                 <h5>보관 상온</h5>
                                 <h5>유통기한 12개월</h5>
                             </div>
                             <p>냉동실을 열어보면 언제 얼려두었는지 모를 생선이 있을 때가 있는데요. 오늘은 손질된 생선을 활용한 어렵지 않은 레시피를 준비했습니다. 칼칼한 국물과 부드러운 살이 사르르 녹는 고등어찜인데요. 정원이네는 여기에 김치도 넣어서 고등어김치찜을 준비했답니다! 개운하고 시원한 김치와 고등어살의 조합이 생각 이상으로 잘 어울리는 메뉴인데요. 감칠맛을 살려주는 진간장 양념으로 만든 오늘의 레시피 하나씩 살펴보아요</p>
                         </div>
-                        <txtRight>
-                            <div class="image"></div>
-                        </txtRight>
+                        <div class="txtRight">
+                            <div class="image i5"></div>
+                        </div>
                     </div>
                 </article>
                 <article>
                     <div class="image i6"></div>
                     <div class="texts">
                         <div class="txtLeft">
-                            <div class="brandLogo"></div>
+                            <div class="brandLogo i6"></div>
+                            <h3>카레여왕 구운마늘과 양파</h3>
                             <div class="txtMid">
-                                <h3>카레여왕 구운마늘과 양파</h3>
                                 <h5>브랜드 카레여왕</h5>
                                 <h5>보관 상온</h5>
                                 <h5>유통기한 12개월</h5>
                             </div>
                             <p>호록호록 호로록~ 면치기하기 좋은 계절! 뜨끈한 국물에 면하면 떠오르는 음식은? 바로~ 우동을 빼놓을 수 없는데요. 우동을 좋아하시는 분들을 위해 오늘 정원이가 닭가슴살 카레우동 레시피를 들고 왔습니다! 카레를 넣어 풍부하고 진한 맛의 국물과 쫄깃한 우동 면발의 케미가 아주 찰떡인데요! 여기에, 닭가슴살을 고명으로 올려주어 카레 국물에 콕 찍어 먹으면 요것도 별미랍니다! 추워지는 날씨에 따뜻한 우동 한 그릇이 생각나셨던 분들이라면? 지금부터 레시피 보면서 함께 만들어봐요~</p>
                         </div>
-                        <txtRight>
-                            <div class="image"></div>
-                        </txtRight>
+                        <div class="txtRight">
+                            <div class="image i6"></div>
+                        </div>
                     </div>
                 </article>
                 <article>
                     <div class="image i7"></div>
                     <div class="texts">
                         <div class="txtLeft">
-                            <div class="brandLogo"></div>
+                            <div class="brandLogo i7"></div>
+                            <h3>홍초 풋사과</h3>
                             <div class="txtMid">
-                                <h3>홍초 풋사과</h3>
                                 <h5>브랜드 홍초</h5>
                                 <h5>보관 상온</h5>
                                 <h5>유통기한 545일</h5>
                             </div>
                             <p>무더운 여름이 가장 힘든 분들 꽤 많으실 것 같은데요. 많고 많은 사람들 중 가장 여름이 힘들 것 같은 분들은 따로 있죠~ 바로 예쁜 아기를 배 속에 안고 있는 임산부들인데요! 이렇게 더운 날은 온몸을 지치게 만들고 어디 움직이거나 걷기에도 꽤나 버거우실 거예요. 이렇게 더울 땐 시원한 음료를 먹고 싶지만 어느 하나도 아무거나 먹을 수 없는 이런 슬픈 상황..! 이럴 땐 정원이의 시원한여름음료만들기에 도전해보세요. 탄산이 들어있지 않고, 새콤달콤하게 그리고 시원하게 즐길 수 있어서 더욱 좋은데요~ 여느 카페 부럽지 않은 홈카페레시피! 홍초로 시원한 무알콜칵테일을 만들어볼까요?</p>
                         </div>
-                        <txtRight>
-                            <div class="image"></div>
-                        </txtRight>
+                        <div class="txtRight">
+                            <div class="image i7"></div>
+                        </div>
                     </div>
                 </article>
+                <div class="btns">
+                    <div class="leftBtn"></div>
+                    <div class="rightBtn"></div>
+                </div>
             </section>
         </div>
     </div>
@@ -213,6 +234,9 @@
                     <div class="image i5"></div>
                     <div class="image i6"></div>
                     <div class="image i7"></div>
+                </div>
+                <div class="bars">
+                    <div class="bar"></div>
                 </div>
                 <div class="artGroup">
                     <article class="a1">

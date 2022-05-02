@@ -57,99 +57,435 @@ $h200 : #{'min(5rem,200px)'};
     background-repeat: no-repeat;
 }
 
+// html,body
 html{
     font-size: 3vw;
     body{
         font-size: 0.7vw;
         color: #222;
+        overflow-x: inherit;
     }
 }
+
+// html 공통
 .image{
     @include bgset;
 }
 
+// main
 .mainWrap{
-    @include bgset;
-    margin-top: #{'min(4rem,160px)'};
-    background-image: url('../images/sub01_img/sub01_main.jpg');
-    padding: #{'min(5rem,200px)'} 0 $h80;
+    padding-top: #{'min(4rem,160px)'};
     main{
         @include grid('pc');
+        @include flex;
+        justify-content: space-around;
         text-align: center;
-        padding-bottom: $h90;
         border-bottom: 1px solid #666;
-        .title{
-            position: relative;
-            width: calc(100% / 12 * 3.3);
-            margin-top: #{'min(-2rem,-80px)'};
-            margin-left: auto;
-            margin-right: #{'min(4rem,160px)'};
-            .image{
-                height: #{'min(4rem,160px)'};
-                background-size: contain;
-                background-image: url('../images/sub01_img/main_title.png');
-            }
-            h2{
-                position: absolute;
-                color: #fff;
-                text-shadow: 2px 2px 10px #000;
-                font-family: aripp;
-                font-size: $fz36;
-                line-height: #{'min(1.25rem,50px)'};
-                top: $h40; left: #{'min(1.25rem,50px)'};
-            }
+        .image.i1{
+            width: calc(100% / 12 * 4.5);
+            height: #{'min(8rem,320px)'};
+            background-image: url('../images/index.img/cnt01_art02_02.png');
         }
-        p{
+        .texts{
             width: calc(100% / 12 * 5);
-            margin-left: auto;
-            margin-right: $h90;
-            margin-top: $h40;
-            font-size: #{'min(2em,20px)'};
-            font-family: 'GangwonEdu_OTFLightA';
-            line-height: $h40;
-            font-weight: 700;
+            .title{
+                position: relative;
+                .image.i2{
+                    height: $h120;
+                    background-size: contain;
+                    background-image: url('../images/sub01_img/main_title.png');
+                }
+                h2{
+                    font-family: aripp;
+                    font-size: #{'min(4em,40px)'};
+                    color: #fff;
+                    text-shadow: 2px 2px 8px #000;
+                    position: absolute;
+                    top: $h20; bottom: 0;right: 0;left: 0;margin: auto;
+                }
+            }
+            p{
+                font-family: 'GangwonEdu_OTFLightA';
+                font-size: $fz18;
+                line-height: $h40;
+                margin-top: $h40;
+                font-weight: 700;
+            }
         }
     }
 }
 
+// cnt
 .cntWrap{
+    margin-top: $h120;
     .content{
         @include grid('pc');
+        // cnt01
         &.cnt01{
             header{
+                margin: 0 auto;
                 h2{
                     left: $h40;
                 }
             }
             section{
+                // article 공통
                 article{
                     @include flex;
                     margin-top: $h40;
+                    .images{
+                        @include flex;
+                        position: relative;
+                        .image{
+                            &.i1{
+                                box-shadow: 2px 2px 6px #000;
+                                position: relative;
+                                height: #{'min(8rem,320px)'};
+                                border-radius: 40px;
+                                z-index: 4;
+                            }
+                            &.i2{
+                                height: #{'min(6rem,240px)'};
+                                position: absolute;
+                            }
+                        }
+                    }
+                    .texts{
+                        font-family: 'GangwonEdu_OTFLightA';
+                        font-weight: 700;
+                        line-height: $h40;
+                        h3{
+                            color: red;
+                            font-size: #{'min(3.4em,34px)'};
+                        }
+                        h5{
+                            font-size: $fz24;
+                        }
+                        p{
+                            margin-top: $h40;
+                        }
+                    }
+                    // article 01
                     &:nth-child(1){
                         direction: rtl;
                         .images{
-                            width: calc(100% / 12 * 5);
+                            width: calc(100% / 12 * 7);
+                            .image{
+                                &.i1{
+                                    width: calc(100% / 7 * 5);
+                                    background-image: url('../images/sub01_img/cnt01_01.jpg');
+                                }
+                                &.i2{
+                                    width: calc(100% / 7 * 3);
+                                    background-image: url('../images/sub01_img/cnt01_imgBg02.png');
+                                    left: $h80; top: #{'min(4rem,160px)'};
+                                }
+                            }
                         }
                         .texts{
+                            width: calc(100% / 12 * 5);
+                            margin-top: $h40;
                             direction: ltr;
-                            width: calc(100% / 12 * 7);
+                            p{
+                                width: calc(100% / 5 * 3.8);
+                            }
                         }
                     }
+                    // article 02
                     &:nth-child(2){
+                        margin-top: $h80;
                         .images{
                             width: 50%;
+                            .image{
+                                &.i1{
+                                    width: calc(100% / 6 * 5);
+                                    background-image: url('../images/sub01_img/cnt01_02.jpg');
+                                }
+                                &.i2{
+                                    background-size: contain;
+                                    width: calc(100% / 6 * 3);
+                                    background-image: url('../images/sub01_img/cnt01_imgBg01.png');
+                                    right: 0; bottom: $h120;
+                                }
+                            }
                         }
                         .texts{
                             width: 50%;
+                            text-align: center;
+                            p{
+                                width: 70%;
+                                margin: 0 auto;
+                                margin-top: $h40;
+                            }
                         }
                     }
                 }
             }
         }
+        &.cnt02{
+            overflow: hidden;
+            padding-bottom: $h20;
+            position: relative;
+            header{
+                width: calc(100% / 12 * 5);
+                margin-left: auto;
+                text-align: center;
+                .image{
+                    width: calc(100% / 5 * 4);
+                    height: #{'min(7rem,280px)'};
+                }
+                h2{
+                    top: #{'min(1.5rem,60px)'}; left: 0; right: 0; bottom: 0; margin: auto;
+                }
+            }
+            section{
+                width: 700%;
+                @include flex;
+                article{
+                    width: calc(100% / 7 - 20px);
+                    margin: 0px 10px;
+                    @include flex;
+                    .image{
+                        height: #{'min(12rem,480px)'};
+                        width: calc(100% / 12 * 7);
+                        border-radius: 60px;
+                        @for $i from 1 through 7{
+                            &.i#{$i}{
+                                background-image: url('../images/sub01_img/slide0#{$i}.jpg');
+                            }
+                        }
+                    }
+                    .texts{
+                        width: calc(100% / 12 * 6);
+                        box-shadow: 2px 2px 6px #000;
+                        background-color: #fff;
+                        font-family: 'GangwonEdu_OTFLightA';
+                        font-weight: 700;
+                        padding: $h40 $h20 $h20 #{'min(0.75rem,30px)'};
+                        border-radius: 60px;
+                        margin-left: #{'min(-2.75rem,-110px)'};
+                        margin-top: $h120;
+                        @include flex;
+                        .txtLeft{
+                            width: calc(100% / 6 * 4);
+                            .brandLogo{
+                                width: calc(100% / 6 * 3);
+                                height: $h80;
+                                @include bgset;
+                                @for $i from 1 through 7{
+                                    &.i#{$i}{
+                                        background-image: url('../images/sub01_img/logo_brand#{$i}.png');
+                                    }
+                                }
+                            }
+                            h3{
+                                font-size: $fz24;
+                                line-height: 40px;
+                                margin-top: $h20;
+                                border-left: 2px solid red;
+                                padding-left: 10px;
+                            }
+                            .txtMid{
+                                @include flex;
+                                margin-top: $h20;
+                                h5{
+                                    font-size: $fz18;
+                                    line-height: $h20;
+                                    border-left: 2px solid red;
+                                    padding: 0px 5px;
+                                }
+                            }
+                            p{
+                                font-size: $fz14;
+                                line-height: $h20;
+                                margin-top: $h40;
+                            }
+                        }
+                        .txtRight{
+                            width: calc(100% / 6 * 2);
+                            margin-top: auto;
+                            .image{
+                                width: 100%;
+                                height: #{'min(4rem,160px)'};
+                                border-radius: 0;
+                                background-size: contain;
+                                @for $im from 1 through 7{
+                                    &.i#{$im}{
+                                        background-image: url('../images/sub01_img/slide_txt0#{$im}.jpg');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .btns{
+                    width: 100%;
+                    position: absolute;
+                    div{
+                        width: calc(100% / 12 * 1);
+                        height: $h40;
+                        @include bgset;
+                        background-size: contain;
+                        position: absolute;
+                        cursor: pointer;
+                    }
+                    .leftBtn{
+                        background-image: url('../images/index.img/slide_btn.png');
+                        top: #{'min(9rem,360px)'}; right: 0;
+                    }
+                    .rightBtn{
+                        background-image: url('../images/index.img/slide_btn.png');
+                        transform: rotate(180deg);
+                        top: $h200;
+                    }
+                }
+            }
+        }
+        &.cnt03{
+            overflow: hidden;
+            padding-bottom: $h20;
+            header{
+                margin: 0 auto;
+                h2{
+                    left: #{'min(1.5rem,60px)'};
+                }
+                h5{
+                    font-family: aripp;
+                    text-align: center;
+                    margin-top: $h20;
+                    font-size: $fz24;
+                }
+            }
+            section{
+                .tab{
+                    @include flex;
+                    margin-top: $h40;
+                   .image{
+                    width: calc(100% / 7 - 20px);
+                    margin: 0px 10px;
+                    height: $h80;
+                    background-size: contain;
+                    transition: all 0.1s;
+                    @for $i from 1 through 7{
+                        &.i#{$i}{
+                            background-image: url('../images/sub01_img/logo_brand#{$i}.png');
+                        }
+                    }
+                   }
+                }
+                .bars{
+                    width: 100%;
+                    background-color: #ccc;
+                    height: $h20;
+                    border-radius: 20px;
+                    position: relative;
+                    margin-top: $h20;
+                    .bar{
+                        @include bgset;
+                        background-size: contain;
+                        background-image: url('../images/sub01_img/pro_bar.png');
+                        height: $h40;
+                        width: calc(100% / 12 * 0.8);
+                        cursor: pointer;
+                        transition: all 0.3s;
+                        position: absolute;
+                        left: 0; top: -10px;
+                        &:hover{
+                            background-image: url('../images/sub01_img/pro_hover.png');
+                        }
+                    }
+                }
+                .artGroup{
+                    @include flex;
+                    width: 700%;
+                    margin: 0 auto;
+                    margin-top: $h80;
+                    article{
+                        width: 70%;
+                        margin: 0px 10px;
+                        @include flex;
+                        flex-wrap: wrap;
+                        &.a1{
+                            .image{
+                                @for $i from 1 through 8{
+                                    &.i#{$i}{
+                                        background-image: url('../images/sub01_img/homeings_0#{$i}.jpg');
+                                    }
+                                }
+                            }
+                        }
+                        &.a2{
+                            .image{
+                                @for $i from 1 through 8{
+                                    &.i#{$i}{
+                                        background-image: url('../images/sub01_img/anjuya_0#{$i}.jpg');
+                                    }
+                                }
+                            }
+                        }
+                        &.a3{
+                            .image{
+                                @for $i from 1 through 8{
+                                    &.i#{$i}{
+                                        background-image: url('../images/sub01_img/sunchang_0#{$i}.jpg');
+                                    }
+                                }
+                            }
+                        }
+                        &.a4{
+                            .image{
+                                @for $i from 1 through 8{
+                                    &.i#{$i}{
+                                        background-image: url('../images/sub01_img/haetsal_0#{$i}.jpg');
+                                    }
+                                }
+                            }
+                        }
+                        &.a5{
+                            .image{
+                                @for $i from 1 through 8{
+                                    &.i#{$i}{
+                                        background-image: url('../images/sub01_img/matsun_0#{$i}.jpg');
+                                    }
+                                }
+                            }
+                        }
+                        &.a6{
+                            .image{
+                                @for $i from 1 through 8{
+                                    &.i#{$i}{
+                                        background-image: url('../images/sub01_img/hongcho_0#{$i}.jpg');
+                                    }
+                                }
+                            }
+                        }
+                        &.a7{
+                            .image{
+                                @for $i from 1 through 8{
+                                    &.i#{$i}{
+                                        background-image: url('../images/sub01_img/curry_0#{$i}.jpg');
+                                    }
+                                }
+                            }
+                        }
+                        .image{
+                            box-shadow: 2px 2px 4px #000;
+                            border-radius: 10px;
+                            width: calc(100% / 4 - 20px);
+                            margin: 0px 10px;
+                            height: #{'min(7rem,280px)'};
+                            &:nth-child(odd){
+                                margin-top: $h40;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 공통
         header{
             width: calc(100% / 12 * 4);
             position: relative;
-            margin: 0 auto;
             .image{
                 width: calc(100% / 4 * 2.3);
                 height: #{'min(4rem,160px)'};
@@ -164,8 +500,18 @@ html{
                 font-family: aripp;
                 line-height: $h80;
                 color: #fff;
-                text-shadow: 2px 2px 6px #000;
+                text-shadow: 1px 1px 5px #000;
+            }
+        }
+        section{
+            article{
+                .images{
+                    .image{}
+                }
             }
         }
     }
+}
+.ftrWrap{
+    margin-top: $h120;
 }
