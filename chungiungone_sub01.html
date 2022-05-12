@@ -20,7 +20,9 @@
                 axis:'x',
                 drag:function(){
                     var p=$(this).position().left;
-                    var ba=p/w*108.3;
+                    var ba=p/w*642.7;
+                    console.log(ba);
+                    
                     $('.artGroup').css('margin-left',-ba+'%');
                 }
             });

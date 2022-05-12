@@ -1,0 +1,367 @@
+// 반응형 변수
+$fz14 : #{'min(1.4em,14px)'};
+$fz18 : #{'min(1.8em,18px)'};
+$fz24 : #{'min(2.4em,24px)'};
+$fz36 : #{'min(3.6em,36px)'};
+$fz50 : #{'min(5em,50px)'};
+$h20 : #{'min(0.5rem,20px)'};
+$h40 : #{'min(1rem,40px)'};
+$h60 : #{'min(1.5rem,60px)'};
+$h80 : #{'min(2rem,80px)'};
+$h90 : #{'min(2.25rem,90px)'};
+$h120 : #{'min(3rem,120px)'};
+$h160 : #{'min(4rem,160px)'};
+$h200 : #{'min(5rem,200px)'};
+
+@font-face{
+    font-family: 'GangwonEdu_OTFLightA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin font($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+    }
+}
+@include font(ari,'JSArirang.ttf');
+@include font(aripp,'JSArirangPPURI.ttf');
+@include font(noto,'NotoSansKR-Regular.otf');
+@include font(dx,'DXSeNB-KSCpc-EUC-H.ttf');
+
+@mixin grid($dev){
+    @if($dev=='tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 80%;
+        max-width: 1080px;
+    }
+    margin: 0 auto;
+}
+// 반응형 미디어쿼리
+@mixin tab {
+    @media (max-width: 1024px) and (min-width: 0px){
+        @content;
+    }
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin bgset {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+// html,body
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+        color: #222;
+    }
+}
+
+// html 공통
+.image{
+    @include bgset;
+}
+
+.cntWrap{
+    margin-top: #{'min(4rem,160px)'};
+    .content{
+        @include grid('pc');
+        .sns{
+            width: calc(100% / 12 * 2.1);
+            @include flex;
+            margin-left: auto;
+            .image{
+                width: calc(100% / 4 - 10px);
+                height: $h40;
+                background-size: contain;
+                cursor: pointer;
+                @for $i from 1 through 4 {
+                    &.i#{$i}{
+                        background-image: url('../images/sub02_img/sns0#{$i}.png');
+                    }
+                }
+            }
+        }
+        header{
+            .hdrTop{
+                .image{
+                    // width: calc(100% / 12 * 2);
+                    height: #{'min(4rem,160px)'};
+                    margin: 0 auto;
+                    background-size: contain;
+                    background-image: url('../images/sub02_img/hdr_img.jpg');
+                }
+            }
+            .hdrBtm{
+                margin-top: $h40;
+                @include flex;
+                .image{
+                    width: calc(100% / 12 * 3);
+                    background-size: contain;
+                    &.i1{
+                        height: $h200;
+                        background-image: url('../images/sub02_img/hdr_txt01.png');
+                    }
+                    &.i2{
+                        height: #{'min(4rem,160px)'};
+                        background-image: url('../images/sub02_img/hdr_txt02.png');
+                    }
+                }
+                .texts{
+                    width: calc(100% / 12 * 4.5);
+                    font-family: 'aripp';
+                    text-align: center;
+                    h5{
+                        font-size: $fz24;
+                        line-height: $h40;
+                        span{
+                            color: #284377;
+                        }
+                    }
+                    h2{
+                        margin-top: $h20;
+                        font-size: #{'min(5em,50px)'};
+                        line-height: $h60;
+                    }
+                }
+            }
+        }
+        section{
+            article{
+                margin-top: $h160;
+                @include flex;
+                flex-wrap: wrap;
+                position: relative;
+                .image{
+                    width: calc(100% / 12 * 7);
+                    height: #{'min(10rem,400px)'};
+                    border-radius: 60px;
+                    background-color: #ccc;
+                    @for $i from 1 through 8 {
+                        &.i#{$i}{
+                            background-image: url('../images/sub02_img/art0#{$i}.jpg');
+                        }
+                    }
+                }
+                .texts{
+                    font-weight: 700;
+                    font-family: 'GangwonEdu_OTFLightA';
+                    width: calc(100% / 12 * 6);
+                    height: #{'min(8rem,320px)'};
+                    border-radius: 60px;
+                    box-shadow: 2px 3px 6px #000;
+                    background-color: #fff;
+                    background-image: url('../images/sub02_img/txt_bgimg.png');
+                    position: absolute;
+                    padding-top: $h40;
+                    .txtTop{
+                        @include flex;
+                        width: calc(100% / 6 * 4);
+                        margin: 0 auto;
+                        .left{
+                            width: calc(100% / 4 * 0.5);
+                            h5{
+                                font-family: 'GangwonEdu_OTFLightA';
+                                font-size: #{'min(2em,20px)'};
+                                margin-left: 10px;
+                                color: #f00;
+                            }
+                            h3{
+                                font-size: $fz50;
+                                font-style: italic;
+                            }
+                        }
+                        h5{
+                            font-family: 'aripp';
+                            width: calc(100% / 4 * 3);
+                            font-size: $fz18;
+                            margin: auto 0;
+                            span{
+                                color: #284377;
+                            }
+                        }
+                    }
+                    .txtBtm{
+                        width: calc(100% / 6 * 4);
+                        margin: 0 auto;
+                        font-size: #{'min(2em,20px)'};
+                        p{
+                            width: calc(100% / 4 * 2.8);
+                            margin: 0 auto;
+                            text-align: center;
+                            line-height: $h40;
+                        }
+                        h5{
+                            margin-top: $h20;
+                            text-align: right;
+                            line-height: $h40;
+                            span{
+                                color: #f00;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(1){
+                    margin-top: $h80;
+                    .texts{
+                        position: absolute;
+                        bottom: #{'min(-1rem,-40px)'}; right: 0;
+                        padding-top: $h20;
+                        .Top{
+                            font-family: 'GangwonEdu_OTFLightA';
+                            width: calc(100% / 6 * 2);
+                            @include flex;
+                            font-size: $fz18;
+                            line-height: $h40;
+
+                            padding-bottom: $h20;
+                            position: absolute;
+                            top: #{'min(-1rem,-40px)'};  right: $h90;
+                            h5{
+                                padding: 0 $h20;
+                                background-color: #ccc;
+                                border-radius: 60px;
+                            }
+                        }
+                        .Btm{
+                            p{
+                                width: calc(100% / 6 * 4);
+                                line-height: $h40;
+                                text-align: center;
+                                margin: 0 auto;
+                                font-size: $fz18;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    .image{
+                        margin-left: auto;
+                    }
+                    .texts{
+                        top: #{'min(-1rem,-40px)'};
+                        .txtTop{
+                            h5{
+                                font-family: 'GangwonEdu_OTFLightA';
+                                font-size: $fz24;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(3){
+                    margin-top: $h120;
+                    .texts{
+                        top: $h40; right: 0;
+                    }
+                }
+                &:nth-child(4){
+                    margin-top: $h120;
+                   .image{
+                       width: calc(100% / 12 * 4);
+                       height: #{'min(6rem,240px)'};
+                   }
+                   .texts{
+                      top: $h160; bottom: 0; left: 0; right: 0; margin: auto;
+                      height: #{'min(7rem,280px)'};
+                      .txtBtm{
+                          p{
+                              width: 88%;
+                          }
+                      }
+                   }
+                }
+                &:nth-child(5){
+                    margin-top: $h200;
+                    .image{
+                        margin-left: auto;
+                    }
+                    .texts{
+                        top: $h20;
+                        .txtBtm{
+                            p{
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(6){
+                    margin-top: $h120;
+                    .texts{
+                        right: 0; bottom: #{'min(-1rem,-40px)'};
+                        .txtBtm{
+                            p{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(7){
+                    .image{
+                        margin-left: auto;
+                    }
+                    .texts{
+                        bottom: #{'min(-2rem,-80px)'};
+                        .txtTop{
+                            .left{
+                                h5{
+                                    text-align: center;
+                                    margin-left: $h20;
+                                }
+                                width: calc(100% / 4 * 1);
+                            }
+                            h5{
+                                width: calc(100% / 4 * 2.6);
+                            }
+                        }
+                        .txtBtm{
+                            width: calc(100% / 6 * 5);
+                            p{
+                                width: 90%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .btns{
+            @include flex;
+            margin-top: $h160;
+            width: calc(100% / 12 * 6);
+            margin-left: auto;
+            direction: rtl;
+            .image{
+                width: calc(100% / 6.2 * 2.5);
+                height: $h90;
+                background-image: url('../images/sub02_img/eshop_btn.png');
+                cursor: pointer;
+            }
+            .texts{
+                width: calc(100% / 6.2 * 3.5);
+                font-style: italic;
+                h3{
+                    font-family: 'GangwonEdu_OTFLightA';
+                    font-size: #{'min(2em,20px)'};
+                    line-height: $h40;
+                    font-weight: 700;
+                   margin-top: $h60;
+                }
+            }
+        }
+    }
+}
+.barBgc{
+    margin-top: $h40;
+    height: $h80;
+    background-color: #626b7e;
+}

@@ -111,9 +111,11 @@ html{
                 }
             }
             .navRight{
-                @include flex;
                 width: calc(100% / 6 * 1.2);
                 font-size: $fz24;
+                i{
+                    cursor: pointer;
+                }
             }
         }
     }
