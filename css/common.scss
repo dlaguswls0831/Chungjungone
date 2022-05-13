@@ -16,6 +16,12 @@ $h200 : #{'min(5rem,200px)'};
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'oj';
+    src: url('https://cdn.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @mixin font($fontname,$url){
     @font-face {
@@ -95,20 +101,13 @@ html{
             @include flex;
             width: calc(100% / 12 * 6);
             line-height: $h80;
-            font-family: noto;
+            font-family: 'oj';
             text-transform: uppercase;
             .navLeft{
                 @include flex;
                 width: calc(100% / 6 * 4);
-                font-size: $fz18;
-                h4{
-                    transition: all 0.5s;
-                    &:hover{
-                        color: #293d85;
-                        font-size: #{'min(2em,20px)'};
-                        font-weight: 700;
-                    }
-                }
+                font-size: $fz14;
+                h4{}
             }
             .navRight{
                 width: calc(100% / 6 * 1.2);
@@ -123,7 +122,7 @@ html{
 
 
 .navBoxWrap{
-    background-color: #ccc;
+    background-color: #fff;;
     height: 0;
     overflow: hidden;
     transition: height 0.5s;
@@ -133,6 +132,7 @@ html{
     top: $h80;
     .navBox{
         @include grid('pc');
+        border-top: 1px solid #ccc;
         nav{
             width: calc(100% / 12 * 3);
             @include flex;
@@ -141,11 +141,12 @@ html{
             line-height: $h80;
             text-transform: uppercase;
             font-family: noto;
-            color: #fff;
+            color: #222;
             h4{
                 transition: all 0.5s;
                 &:hover{
                     color: #293d85;
+                    text-shadow: 2px 2px 2px #ccc;
                     font-size: #{'min(1.8em,18px)'};
                     font-weight: 700;
                 }
