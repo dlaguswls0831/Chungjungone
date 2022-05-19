@@ -85,7 +85,7 @@ html{
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0; margin: auto;
         text-align: center;
-        margin-top: 350px;
+        margin-top: #{'min(8.75rem,350px)'};
         h2{
             font-family: 'SuseongHyejeong';
             font-size: #{'min(8em,80px)'};
@@ -98,4 +98,171 @@ html{
             line-height: $h40;
         }
     }
+}
+
+.cntWrap{
+    &:nth-child(3){
+        margin-top: $h80;
+    }
+    .content{
+        @include grid('pc');
+        header{
+            position: relative;
+            .image{
+                width: calc(100% / 12 * 3.8);
+                height: #{'min(4rem,160px)'};
+                background-size: contain;
+                background-image: url('../images/sub03_img/header_img.png');
+                margin: 0 auto;
+            }
+            h2{
+                text-align: center;
+                color: #fff;
+                text-shadow: 4px 4px 8px #000;
+                position: absolute;
+                top: 0; bottom: 0; left: 0; right: 0; margin: auto;
+            }
+        }
+        section{
+            margin-top: $h40;
+        }
+        &.cnt01{
+            padding-bottom: $h40;
+            border-bottom: 1px solid #ccc;
+            header{
+                h2{
+                    font-size: #{'min(5em,50px)'};
+                    font-family: 'aripp';
+                    top: 35%;
+                }
+            }
+            section{
+                article{
+                    width: calc(100% / 12 * 10);
+                    margin: 0 auto;
+                    .artTop{
+                        video{
+                            width: 100%;
+                        }
+                    }
+                    .artBtm{
+                        @include flex;
+                        .txtLeft{
+                            width: calc(100% / 10 * 6);
+                            h3{
+                                font-family: 'aripp';
+                                font-size: #{'min(4em,40px)'};
+                                margin-left: #{'min(1.75rem,70px)'};
+                                margin-top: $h40;
+                                span{
+                                    color: #284376;
+                                }
+                            }
+                        }
+                        .txtRight{
+                            width: calc(100% / 10 * 3);
+                            .sns{
+                                width: calc(100% / 3 * 2);
+                                @include flex;
+                                margin-top: $h20;
+                                margin-left: auto;
+                                .image{
+                                    width: 20%;
+                                    background-size: contain;
+                                    height: $h40;
+                                    cursor: pointer;
+                                    @for $i from 1 through 4 {
+                                        &.i#{$i}{
+                                            background-image: url('../images/sub02_img/sns0#{$i}.png');
+                                        }
+                                    }
+                                }
+                            }
+                            .text{
+                                @include flex;
+                                width: calc(100% / 3 * 2);
+                                margin-top: $h40;
+                                margin-left: auto;
+                                font-family: 'aripp';
+                                font-size: $fz18;
+                                font-weight: 700;
+                                line-height: $h40;
+                            }
+                            .btn{
+                                width: calc(100% / 3 * 2);
+                                margin-top: $h40;
+                                margin-left: auto;
+                                background-color: #666;
+                                line-height: $h40;
+                                font-family: 'aripp';
+                                font-size: $fz24;
+                                text-align: center;
+                                color: #fff;
+                                cursor: pointer;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.cnt02{
+            margin-top: $h40;
+            position: relative;
+            header{
+                h2{
+                    font-size: #{'min(3em,30px)'};
+                    font-family: 'GangwonEdu_OTFLightA';
+                    font-weight: 700;
+                    top: 50%;
+                }
+            }
+            section{
+                width: calc(100% / 12 * 10);
+                margin: 0 auto;
+                margin-top: $h40;
+                overflow: hidden;
+                .artGroup{
+                    width: 300%;
+                    @include flex;
+                    article{
+                        width: calc(100% / 6 - 20px);
+                        margin: 0px 10px;
+                        .image{
+                            height: #{'min(6.5rem,260px)'};
+                            @for $i from 1 through 6{
+                                &.i#{$i}{
+                                    background-image: url('../images/sub03_img/cnt02_img0#{$i}.jpg');
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .btns{
+                @include flex;
+                width: 100%;
+                position: absolute;
+                bottom: $h90;
+                .image{
+                    width: 5%;
+                    height: $h40;
+                    cursor: pointer;
+                    &.i1{
+                        background-image: url('../images/sub03_img/arrow.png');
+                    }
+                    &.i2{
+                        transform: rotate(180deg);
+                        background-image: url('../images/sub03_img/arrow.png');
+                    }
+                }
+            }
+        }
+    }
+}
+
+.barBgc{
+    margin-top: $h80;
+    height: $h80;
+    background-color: #626b7e;
 }

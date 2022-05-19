@@ -107,7 +107,15 @@ html{
                 @include flex;
                 width: calc(100% / 6 * 4);
                 font-size: $fz14;
-                h4{}
+                h4{
+                    transition: all 0.5s;
+                    &:hover{
+                        color: #293d85;
+                        text-shadow: 2px 2px 2px #ccc;
+                        font-size: #{'min(1.8em,18px)'};
+                        font-weight: 700;
+                    }
+                }
             }
             .navRight{
                 width: calc(100% / 6 * 1.2);
@@ -118,11 +126,30 @@ html{
             }
         }
     }
+    @include tab{
+        header{
+            @include grid('tab');
+            .logo{
+                width: calc(100% / 8 * 2);
+            }
+            nav{
+                width: calc(100% / 8 * 2);
+                .navLeft{
+                    display: none;
+                }
+                .navRight{
+                    width: 100%;
+                    font-size: #{'min(3em,30px)'};
+                    text-align: right;
+                }
+            }
+        }
+    }
 }
 
 
 .navBoxWrap{
-    background-color: #fff;;
+    background-color: rgb(228, 228, 228);;
     height: 0;
     overflow: hidden;
     transition: height 0.5s;
@@ -132,7 +159,6 @@ html{
     top: $h80;
     .navBox{
         @include grid('pc');
-        border-top: 1px solid #ccc;
         nav{
             width: calc(100% / 12 * 3);
             @include flex;
@@ -152,6 +178,45 @@ html{
                 }
             }
         }
+        .btn{
+            display: none;
+        }
+    }
+    @include tab{
+        width: 0%;
+        right: 0;
+        height: 100vh;
+        .navBox{
+            width: 100%;
+            position: relative;
+            nav{
+                width: 100%;
+                flex-wrap: wrap;
+                h4{
+                    font-family: 'oj';
+                    width: 100%;
+                    text-align: right;
+                    padding-right: 40px;
+                    line-height: $h120;
+                    font-size: $fz14;
+                    opacity: 0;
+                    &::after{
+                        content: '';
+                        display: block;
+                        width: 80%;
+                        height: 2px;
+                        border-top: 1px solid #666;
+                        margin-left: auto;
+                    }
+               }
+           }
+           .btn{
+               display: block;
+               position: absolute;
+               top: $h20; left: $h20;
+               font-size: $fz24;
+           }
+        }
     }
 }
 
@@ -161,11 +226,19 @@ html{
     padding: $h40 0 $h80;
     footer{
         @include grid('pc');
+        @include tab{
+            @include grid('tab')
+        }
         font-family: noto;
         .ftrTop{
             @include flex;
             nav{
                 @include flex;
+                @include tab{
+                    width: calc(100% / 8 * 5);
+                    margin-left: auto;
+                    margin-right: $h90;
+                }
                 width: calc(100% / 12 * 6);
                 h4{
                     font-size: $fz18;
@@ -181,6 +254,9 @@ html{
             }
             .sns{
                 @include flex;
+                @include tab{
+                    display: none;
+                }
                 width: calc(100% / 12 * 2);
                 i{
                     font-size: $fz24;
@@ -200,10 +276,16 @@ html{
                 background-image: url('../images/index.img/ftr_logo.png');
             }
             .info{
+                @include tab{
+                    width: calc(100% / 8 * 5.5);
+                }
                 width: calc(100% / 12 * 8.5);
                 .top{
                     width: calc(100% / 8.5 * 7.5);
                     @include flex;
+                    @include tab{
+                        display: none;
+                    }
                     li{
                         border-left: 1px solid #666;
                         padding: 0 10px;
@@ -216,9 +298,17 @@ html{
                     @include flex;
                     margin-top: 10px;
                     li{
+                        @include tab{
+                            &:nth-last-child(1){
+                                display: none;
+                            }
+                        }
                         border-left: 1px solid #666;
                         padding: 0 10px;
                         &:nth-child(1){
+                            @include tab{
+                                border-left: 1px solid #666;
+                            }
                             border-left: none;
                         }
                     }
