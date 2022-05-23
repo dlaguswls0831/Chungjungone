@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>클릭해주세요</h1>
+    <h1>클릭해주세요</h1>
+    <h1>클릭해주세요</h1>
+    <h1>클릭해주세요</h1>
+    <h1>클릭해주세요</h1>
+    <h1>클릭해주세요</h1>
+    <!-- 바디안에 넣어주면서 로딩함수가 필요없어지면서 데이터량이 줄어든다 -->
+    <script>
+        var h1 = document.getElementsByTagName('h1');
+        var h1dom = document.querySelectorAll('h1');
+        h1dom.forEach(function(e){
+            e.onclick=function(){
+                alert('1');
+            }
+        });
+
+        // for(var i=0; i<h1.length; i++){
+        //     h1[i].onclick=function(){
+        //         alert();
+        //     }
+        // }
+    </script>
+</body>
+</html>
