@@ -1,5 +1,5 @@
 $(function(){
-    $('.hdr').load('../inc/header.html',function(){
+    $('.hdr').load('./inc/header.html',function(){
         var wd = $(window).width();
         if(wd > 1024){
             $('.navRight').find('i').last().mouseover(function(){
@@ -34,5 +34,5 @@ $(function(){
             })
         }else{}
     });
-    $('.ftr').load('../inc/footer.html');
+    $('.ftr').load('./inc/footer.html');
 });
