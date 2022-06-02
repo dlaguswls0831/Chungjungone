@@ -4,7 +4,7 @@ $(function(){
             var t = 0;
             
             for(var u = 0; u<12; u++){
-                setTimeout(tt,u*500);
+                setTimeout(tt,u*1000);
             }
 
             function tt(tt){
@@ -23,8 +23,23 @@ $(function(){
         if(srl>=600){
             $('.cnt01 .images').css('opacity','1');
         }
-        if(srl>=1300){
-            $('.cnt01 article').eq(0).find('h3').css('opacity','1');
+        if(srl>=1200){
+            $('.cnt01 article:first').find('.images').animate({
+                marginLeft: '0%'
+            },700,function(){
+                $('.cnt01  article:first').find('h3').css({
+                   height : 'min(2rem,80px)'
+                });
+            });
+        }
+        if(srl>=1900){
+            $('.cnt01 article:last').find('.images').animate({
+                marginRight: '0%'
+            },700,function(){
+                $('.cnt01  article:last').find('h3').css({
+                   height : 'min(2rem,80px)'
+                });
+            });
         }
     })
 

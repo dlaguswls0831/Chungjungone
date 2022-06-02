@@ -239,12 +239,18 @@ html{
                 }
             }
             section{
-                width: 700%;
-                @include flex;
+                width: 100%;
+                position: relative;
+                height: 600px;
+                // @include flex;
                 article{
-                    width: calc(100% / 7 - 20px);
-                    margin: 0px 10px;
+                    width: 99%;
+                    height: 100%;
+                    overflow: hidden;
+                    background-color: #fff;
                     @include flex;
+                    position: absolute;
+                    top: 0; left: 0;
                     .image{
                         height: #{'min(12rem,480px)'};
                         width: calc(100% / 12 * 7);
@@ -257,7 +263,7 @@ html{
                     }
                     .texts{
                         width: calc(100% / 12 * 6);
-                        box-shadow: 2px 2px 6px #000;
+                        border: 2px solid rgb(173, 173, 173);
                         background-color: #fff;
                         font-family: 'GangwonEdu_OTFLightA';
                         font-weight: 700;
