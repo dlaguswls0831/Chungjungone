@@ -193,6 +193,9 @@ html{
             section{
                 // article 공통
                 article{
+                    @include mob{
+                        flex-wrap: wrap
+                    }
                     @include flex;
                     margin-top: $h40;
                     .images{
@@ -249,15 +252,25 @@ html{
                     &:nth-child(1){
                         direction: rtl;
                         .images{
+                            @include mob{
+                                width: 100%;
+                            }
                             width: calc(100% / 12 * 7);
                             .image{
                                 &.i1{
+                                    @include mob{
+                                        width: 80%;
+                                    }
                                     width: calc(100% / 7 * 5);
                                     background-image: url('../images/sub01_img/cnt01_01.jpg');
                                 }
                                 &.i2{
                                     @include tab{
                                         top: $h120;
+                                    }
+                                    @include mob{
+                                        width: 50%;
+                                        left: 0;
                                     }
                                     width: calc(100% / 7 * 3);
                                     background-image: url('../images/sub01_img/cnt01_imgBg02.png');
@@ -266,10 +279,17 @@ html{
                             }
                         }
                         .texts{
+                            @include mob{
+                                width: 100%;
+                                text-align: center;
+                            }
                             width: calc(100% / 12 * 5);
                             margin-top: $h40;
                             direction: ltr;
                             p{
+                                @include mob{
+                                    display: none;
+                                }
                                 width: calc(100% / 5 * 3.8);
                             }
                         }
@@ -282,8 +302,14 @@ html{
                         margin-top: $h80;
                         .images{
                             width: 50%;
+                            @include mob{
+                                width: 100%;
+                            }
                             .image{
                                 &.i1{
+                                    @include mob{
+                                        width: 80%;
+                                    }
                                     width: calc(100% / 6 * 5);
                                     background-image: url('../images/sub01_img/cnt01_02.jpg');
                                 }
@@ -296,9 +322,16 @@ html{
                             }
                         }
                         .texts{
+                            @include mob{
+                                width: 100%;
+                                margin-top: $h40;
+                            }
                             width: 50%;
                             text-align: center;
                             p{
+                                @include mob{
+                                    display: none;
+                                }
                                 width: 70%;
                                 margin: 0 auto;
                                 margin-top: $h40;
@@ -313,6 +346,10 @@ html{
             padding-bottom: $h20;
             position: relative;
             header{
+                @include mob{
+                    width: calc(100% / 4 * 3);
+                    margin: 0 auto;
+                }
                 width: calc(100% / 12 * 5);
                 margin-left: auto;
                 text-align: center;
@@ -331,11 +368,17 @@ html{
                 @include tab{
                     height: #{'min(12rem,480px)'};
                 }
+                @include mob{
+                    height: #{'min(11rem,440px)'};
+                }
                 width: 100%;
                 position: relative;
                 height: #{'min(15rem,600px)'};
                 // @include flex;
                 article{
+                    @include mob{
+                        flex-wrap: wrap;
+                    }
                     width: 99%;
                     height: 100%;
                     overflow: hidden;
@@ -347,6 +390,10 @@ html{
                         @include tab{
                             width: calc(100% / 8 * 5);
                             height: #{'min(10rem,400px)'};
+                        }
+                        @include mob{
+                            width: 100%;
+                            height: #{'min(6rem,240px)'};
                         }
                         height: #{'min(12rem,480px)'};
                         width: calc(100% / 12 * 7);
@@ -362,6 +409,12 @@ html{
                             width: calc(100% / 8 * 4);
                             padding: 0 $h20;
                         }
+                        @include mob{
+                            width: 90%;
+                            position: absolute;
+                            margin-left: 0;
+                            bottom: 0; left: 5%;
+                        }
                         width: calc(100% / 12 * 6);
                         border: 2px solid rgb(173, 173, 173);
                         background-color: #fff;
@@ -376,10 +429,17 @@ html{
                             @include tab{
                                 width: 70%;
                             }
+                            @include mob{
+                                width: 60%;
+                                margin: 0 auto;
+                            }
                             width: calc(100% / 6 * 4);
                             .brandLogo{
                                 @include tab{
                                     background-size: contain;
+                                }
+                                @include mob{
+                                    margin: 0 auto;
                                 }
                                 width: calc(100% / 6 * 3);
                                 height: $h80;
@@ -395,6 +455,10 @@ html{
                                     font-size: $fz18;
                                     line-height: $h20;
                                 }
+                                @include mob{
+                                    border-left: none;
+                                    text-align: center;
+                                }
                                 font-size: $fz24;
                                 line-height: $h40;
                                 margin-top: $h20;
@@ -408,6 +472,13 @@ html{
                                     @include tab{
                                         font-size: $fz14;
                                     }
+                                    @include mob{
+                                        &:nth-child(1){
+                                            display: none;
+                                        }
+                                        border-left: none;
+                                        line-height: $h80;
+                                    }
                                     font-size: $fz18;
                                     line-height: $h20;
                                     border-left: 2px solid red;
@@ -418,6 +489,9 @@ html{
                                 @include tab{
                                     height: #{'min(2.5rem,100px)'};
                                     overflow: hidden;
+                                }
+                                @include mob{
+                                    display: none;
                                 }
                                 font-size: $fz14;
                                 line-height: $h20;
@@ -450,6 +524,9 @@ html{
                 position: absolute;
                 top: #{'min(7rem,280px)'}; left: 0;
                 div{
+                    @include mob{
+                        width: 20%;
+                    }
                     width: calc(100% / 12 * 1);
                     height: $h40;
                     @include bgset;
@@ -461,10 +538,16 @@ html{
                     @include tab{
                        top: #{'min(7rem,280px)'}; right: 1%;
                     }
+                    @include mob{
+                        top: $h90;
+                    }
                     background-image: url('../images/index.img/slide_btn.png');
                     top: #{'min(9rem,360px)'}; right: 0;
                 }
                 .rightBtn{
+                    @include mob{
+                        top: $h90; left: 1%;
+                    }
                     background-image: url('../images/index.img/slide_btn.png');
                     transform: rotate(180deg);
                     top: $h200;
@@ -648,6 +731,9 @@ html{
                 @include tab{
                     line-height: $h40;
                     top: #{'min(1.5rem,60px)'};
+                }
+                @include mob{
+                    font-size: $fz24
                 }
                 top: $h40;
                 position: absolute;
