@@ -63,11 +63,23 @@ $h200 : #{'min(5rem,200px)'};
 
 html{
     font-size: 3vw;
+    @include tab{
+        font-size: 3.5vw;
+    }
+    @include mob{
+        font-size: 8.5vw;
+    }
     body{
         font-size: 0.7vw;
         position: relative;
         overflow-x: hidden;
         color: #222;
+        @include tab{
+            font-size: 0.8vw;
+        }
+        @include mob{
+            font-size: 2.1vw;
+        }
     }
 }
 .image{
@@ -108,6 +120,7 @@ html{
             @include grid('tab');
             .title{
                 width: 50%;
+                margin-left: 0;
                 .image{
                     width: 100%;
                     background-size: contain;
@@ -116,6 +129,26 @@ html{
                 h2{
                     width: 100%;
                     left: 0;
+                }
+            }
+        }
+    }
+    @include mob{
+        padding: $h40 0 $h80;
+        main{
+            .title{
+                width: 50%;
+                margin-left: 0;
+                .image{
+                    width: 100%;
+                    background-size: contain;
+                    height: $h90;
+                }
+                h2{
+                    width: 100%;
+                    left: 0; top: 0;
+                    font-size: $fz24;
+                    line-height: $h40;
                 }
             }
         }
@@ -144,9 +177,15 @@ html{
 .cntWrap{
     margin-top: $h120;
     overflow: hidden;
+    @include tab{
+        margin-top: $h80;
+    }
     &.cntWrap04{
         position: relative;
         z-index: 2;
+        @include tab{
+            margin-top: 0;
+        }
         .Wrapimg{
             @include tab {
                 bottom: 0;
@@ -197,6 +236,10 @@ html{
                             @include tab{
                                 height: #{'min(4.5rem,180px)'};
                             }
+                            @include mob{
+                                height: $h80;
+                                top: $h40; right: 0;
+                            }
                         }
                         &.i2{
                             animation-name: mo;
@@ -205,8 +248,15 @@ html{
                             width: calc(100% / 12 * 2.8);
                             height: #{'min(9rem,360px)'};
                             left: $h40; bottom: $h40;
+                            @include mob{
+                                top: $h40; left: 0;
+                                height: $h90;
+                            }
                         }
                         &.i3{
+                            @include mob{
+                                display: none;
+                            }
                             animation-name: mov;
                             animation-duration: 2s;
                             width: calc(100% / 12 * 3);
@@ -224,6 +274,9 @@ html{
                     }
                 }
                 .texts{
+                    @include mob{
+                        padding: $h40 0;
+                    }
                     padding: $h200 0 $h80;
                     h2{
                         line-height: $h40;
@@ -236,6 +289,9 @@ html{
                             font-size: $fz18;
                             line-height: $h20;
                             color: #666;
+                            @include mob{
+                                font-size: $fz14;
+                            }
                         }
                         &:nth-child(3){
                             font-size: $fz24;
@@ -245,9 +301,16 @@ html{
                             @include tab{
                                 line-height: $h80;
                             }
+                            @include mob{
+                                font-size: $fz18;
+                                line-height: $h40;
+                            }
                         }
                     }
                     p{
+                        @include mob{
+                            display: none;
+                        }
                         font-family: 'GangwonEdu_OTFLightA';
                         font-weight: 700;
                         margin: 0 auto;
@@ -269,6 +332,12 @@ html{
             section{
                 article{
                     @include flex;
+                    @include tab {
+                        margin-top: $h40;
+                    }
+                    @include mob{
+                        margin-top: 0;
+                    }
                     margin-top: $h120;
                     &:nth-child(1){
                         .images{
@@ -303,7 +372,10 @@ html{
                                 @include tab {
                                     margin: 0 auto;
                                     margin-top: $h40;
-                                    height: #{'min(1.5rem,60px)'};
+                                    height: $h80;
+                                }
+                                @include mob {
+                                    display: none;
                                 }
                                 height: #{'min(4.5rem,180px)'};
                                 overflow: hidden;
@@ -351,6 +423,9 @@ html{
                                     margin-top: $h40;
                                     height: #{'min(1.5rem,60px)'};
                                 }
+                                @include mob {
+                                    display: none;
+                                }
                                 height: #{'min(4rem,160px)'};
                                 overflow: hidden;
                             }
@@ -391,7 +466,7 @@ html{
                         h3{
                             @include tab {
                                 overflow: inherit;
-                                height: $h40;
+                                font-size: $fz36;
                             }
                             font-size: #{'min(5em,50px)'};
                             line-height: $h80;
@@ -463,7 +538,7 @@ html{
                     background-size: contain;
                     background-image: url('../images/index.img/cnt02_hdr.png');
                     height: $h200;
-                    padding: $h40 0 $h40;
+                    padding: #{'min(1.5rem,60px)'} 0 $h40;
                     h2{
                         span{
                             color: #293d85;
@@ -524,12 +599,15 @@ html{
                         background-image: url('../images/index.img/cnt03_imgBg.png');
                     }
                     .images{
+                        @include tab {
+                            width: 80%;
+                        }
                         width: calc(100% / 7 * 5.5);
                         position: absolute;
                         top: $h40;
                         .image{
                             @include tab {
-                                height: #{'min(8.5rem,340px)'};
+                                height: #{'min(7.5rem,300px)'};
                                 margin-top: $h40;
                             }
                             width: 100%;
@@ -566,6 +644,9 @@ html{
                             height: #{'min(12.5rem,500px)'};
                             overflow: hidden;
                             h3{
+                                @include tab {
+                                    font-size: $fz24;
+                                }
                                 font-size: #{'min(3.4em,34px)'};
                                 line-height: $h40;
                                 border-left: 1px solid #666;
@@ -655,7 +736,7 @@ html{
                     margin: 0px 10px;
                     .image{
                         @include tab {
-                            height: #{'min(6rem,240px)'};
+                            height: #{'min(5rem,200px)'};
                         }
                         height: #{'min(7rem,280px)'};
                         @for $i from 1 through 2{
@@ -694,10 +775,13 @@ html{
             text-align: center;
             h2{
                 font-size: #{'min(5em,50px)'};
+                @include tab{
+                    font-size: #{'min(4em,40px)'};
+                }
+                @include mob{
+                    font-size: $fz24;
+                }
             }
         }
-    }
-    @include tab{
-        margin-top: $h80;
     }
 }
