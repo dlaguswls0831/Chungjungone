@@ -46,6 +46,11 @@ $h200 : #{'min(5rem,200px)'};
         @content;
     }
 }
+@mixin mob {
+    @media (max-width: 420px) and (min-width: 0px){
+        @content;
+    }
+}
 
 @mixin flex {
     display: flex;
@@ -60,10 +65,22 @@ $h200 : #{'min(5rem,200px)'};
 // html,body
 html{
     font-size: 3vw;
+    @include tab{
+        font-size: 3.5vw;
+    }
+    @include mob{
+        font-size: 8.5vw;
+    }
     body{
         font-size: 0.7vw;
         color: #222;
         overflow-x: inherit;
+        @include tab{
+            font-size: 0.8vw;
+        }
+        @include mob{
+            font-size: 2.1vw;
+        }
     }
 }
 
@@ -74,28 +91,55 @@ html{
 
 // main
 .mainWrap{
+    @include mob{
+        padding-top: $h120;
+    }
     padding-top: #{'min(4rem,160px)'};
     main{
         @include grid('pc');
         @include flex;
+        @include tab{
+            @include grid('tab');
+        }
+        @include mob{
+            padding-bottom: $h40;
+        }
         justify-content: space-around;
         text-align: center;
         border-bottom: 1px solid #666;
         .image.i1{
+            @include tab{
+                width: 50%;
+            }
+            @include mob{
+                height: $h200;
+            }
             width: calc(100% / 12 * 4.5);
             height: #{'min(8rem,320px)'};
             background-image: url('../images/index.img/cnt01_art02_02.png');
         }
         .texts{
             width: calc(100% / 12 * 5);
+            @include tab{
+                margin-top: $h40;
+            }
+            @include mob{
+                margin-top: $h80;
+            }
             .title{
                 position: relative;
                 .image.i2{
+                    @include mob{
+                        height: $h80;
+                    }
                     height: $h120;
                     background-size: contain;
                     background-image: url('../images/sub01_img/main_title.png');
                 }
                 h2{
+                    @include mob{
+                        font-size: $fz24;
+                    }
                     font-family: aripp;
                     font-size: #{'min(4em,40px)'};
                     color: #fff;
@@ -105,6 +149,15 @@ html{
                 }
             }
             p{
+                @include tab{
+                    span{
+                        display: none;
+                    }
+                    margin-top: 0;
+                }
+                @include mob{
+                    display: none;
+                }
                 font-family: 'GangwonEdu_OTFLightA';
                 font-size: $fz18;
                 line-height: $h40;
@@ -117,14 +170,23 @@ html{
 
 // cnt
 .cntWrap{
+    @include tab{
+        margin-top: $h80;
+    }
     margin-top: $h120;
     .content{
         @include grid('pc');
+        @include tab {
+            @include grid('tab');
+        }
         // cnt01
         &.cnt01{
             header{
                 margin: 0 auto;
                 h2{
+                    @include tab{
+                        left: 28%;
+                    }
                     left: $h40;
                 }
             }
@@ -134,10 +196,16 @@ html{
                     @include flex;
                     margin-top: $h40;
                     .images{
+                        @include tab{
+                            width: 50%;
+                        }
                         @include flex;
                         position: relative;
                         .image{
                             &.i1{
+                                @include tab{
+                                    height: #{'min(6rem,240px)'};
+                                }
                                 box-shadow: 2px 2px 6px #000;
                                 position: relative;
                                 height: #{'min(8rem,320px)'};
@@ -151,17 +219,29 @@ html{
                         }
                     }
                     .texts{
+                        @include tab{
+                            width: 50%;
+                        }
                         font-family: 'GangwonEdu_OTFLightA';
                         font-weight: 700;
                         line-height: $h40;
                         h3{
+                            @include tab{
+                                font-size: $fz18;
+                            }
                             color: red;
                             font-size: #{'min(3.4em,34px)'};
                         }
                         h5{
+                            @include tab{
+                                font-size: $fz18;
+                            }
                             font-size: $fz24;
                         }
                         p{
+                            @include tab{
+                                line-height: $h20;
+                            }
                             margin-top: $h40;
                         }
                     }
@@ -176,6 +256,9 @@ html{
                                     background-image: url('../images/sub01_img/cnt01_01.jpg');
                                 }
                                 &.i2{
+                                    @include tab{
+                                        top: $h120;
+                                    }
                                     width: calc(100% / 7 * 3);
                                     background-image: url('../images/sub01_img/cnt01_imgBg02.png');
                                     left: $h80; top: #{'min(4rem,160px)'};
@@ -193,6 +276,9 @@ html{
                     }
                     // article 02
                     &:nth-child(2){
+                        @include tab{
+                            margin-top: $h120;
+                        }
                         margin-top: $h80;
                         .images{
                             width: 50%;
@@ -235,13 +321,19 @@ html{
                     height: #{'min(7rem,280px)'};
                 }
                 h2{
+                    @include tab{
+                        top: #{'min(2.5rem,100px)'};
+                    }
                     top: #{'min(1.5rem,60px)'}; left: 0; right: 0; bottom: 0; margin: auto;
                 }
             }
             section{
+                @include tab{
+                    height: #{'min(12rem,480px)'};
+                }
                 width: 100%;
                 position: relative;
-                height: 600px;
+                height: #{'min(15rem,600px)'};
                 // @include flex;
                 article{
                     width: 99%;
@@ -252,6 +344,10 @@ html{
                     position: absolute;
                     top: 0; left: 0;
                     .image{
+                        @include tab{
+                            width: calc(100% / 8 * 5);
+                            height: #{'min(10rem,400px)'};
+                        }
                         height: #{'min(12rem,480px)'};
                         width: calc(100% / 12 * 7);
                         border-radius: 60px;
@@ -262,6 +358,10 @@ html{
                         }
                     }
                     .texts{
+                        @include tab{
+                            width: calc(100% / 8 * 4);
+                            padding: 0 $h20;
+                        }
                         width: calc(100% / 12 * 6);
                         border: 2px solid rgb(173, 173, 173);
                         background-color: #fff;
@@ -273,8 +373,14 @@ html{
                         margin-top: $h120;
                         @include flex;
                         .txtLeft{
+                            @include tab{
+                                width: 70%;
+                            }
                             width: calc(100% / 6 * 4);
                             .brandLogo{
+                                @include tab{
+                                    background-size: contain;
+                                }
                                 width: calc(100% / 6 * 3);
                                 height: $h80;
                                 @include bgset;
@@ -285,8 +391,12 @@ html{
                                 }
                             }
                             h3{
+                                @include tab{
+                                    font-size: $fz18;
+                                    line-height: $h20;
+                                }
                                 font-size: $fz24;
-                                line-height: 40px;
+                                line-height: $h40;
                                 margin-top: $h20;
                                 border-left: 2px solid red;
                                 padding-left: 10px;
@@ -295,6 +405,9 @@ html{
                                 @include flex;
                                 margin-top: $h20;
                                 h5{
+                                    @include tab{
+                                        font-size: $fz14;
+                                    }
                                     font-size: $fz18;
                                     line-height: $h20;
                                     border-left: 2px solid red;
@@ -302,12 +415,19 @@ html{
                                 }
                             }
                             p{
+                                @include tab{
+                                    height: #{'min(2.5rem,100px)'};
+                                    overflow: hidden;
+                                }
                                 font-size: $fz14;
                                 line-height: $h20;
                                 margin-top: $h40;
                             }
                         }
                         .txtRight{
+                            @include tab{
+                                display: none;
+                            }
                             width: calc(100% / 6 * 2);
                             margin-top: auto;
                             .image{
@@ -324,26 +444,30 @@ html{
                         }
                     }
                 }
-                .btns{
-                    width: 100%;
+            }
+            .btns{
+                width: 100%;
+                position: absolute;
+                top: #{'min(7rem,280px)'}; left: 0;
+                div{
+                    width: calc(100% / 12 * 1);
+                    height: $h40;
+                    @include bgset;
+                    background-size: contain;
                     position: absolute;
-                    div{
-                        width: calc(100% / 12 * 1);
-                        height: $h40;
-                        @include bgset;
-                        background-size: contain;
-                        position: absolute;
-                        cursor: pointer;
+                    cursor: pointer;
+                }
+                .leftBtn{
+                    @include tab{
+                       top: #{'min(7rem,280px)'}; right: 1%;
                     }
-                    .leftBtn{
-                        background-image: url('../images/index.img/slide_btn.png');
-                        top: #{'min(9rem,360px)'}; right: 0;
-                    }
-                    .rightBtn{
-                        background-image: url('../images/index.img/slide_btn.png');
-                        transform: rotate(180deg);
-                        top: $h200;
-                    }
+                    background-image: url('../images/index.img/slide_btn.png');
+                    top: #{'min(9rem,360px)'}; right: 0;
+                }
+                .rightBtn{
+                    background-image: url('../images/index.img/slide_btn.png');
+                    transform: rotate(180deg);
+                    top: $h200;
                 }
             }
         }
@@ -353,6 +477,9 @@ html{
             header{
                 margin: 0 auto;
                 h2{
+                    @include tab{
+                        left: 32%;
+                    }
                     left: #{'min(1.5rem,60px)'};
                 }
                 h5{
@@ -366,20 +493,32 @@ html{
                 .tab{
                     @include flex;
                     margin-top: $h40;
-                   .image{
-                    width: calc(100% / 7 - 20px);
-                    margin: 0px 10px;
-                    height: $h80;
-                    background-size: contain;
-                    transition: all 0.1s;
-                    @for $i from 1 through 7{
-                        &.i#{$i}{
-                            background-image: url('../images/sub01_img/logo_brand#{$i}.png');
+                    @include tab{
+                        width: 90%;
+                        margin: 0 auto;
+                        flex-wrap: wrap;
+                    }
+                    .image{
+                        @include tab{
+                            width: calc(100% / 3 - 20px);
+                            margin-top: $h40;
                         }
+                        width: calc(100% / 7 - 20px);
+                        margin: 0px 10px;
+                        height: $h80;
+                        background-size: contain;
+                        transition: all 0.1s;
+                        @for $i from 1 through 7{
+                            &.i#{$i}{
+                                background-image: url('../images/sub01_img/logo_brand#{$i}.png');
+                            }   
                     }
                    }
                 }
                 .bars{
+                    @include tab{
+                        display: none;
+                    }
                     width: 100%;
                     background-color: #ccc;
                     height: $h20;
@@ -402,6 +541,9 @@ html{
                     }
                 }
                 .artGroup{
+                    @include tab{
+                        display: none
+                    }
                     @include flex;
                     width: 700%;
                     margin: 0 auto;
@@ -490,6 +632,9 @@ html{
         }
         // 공통
         header{
+            @include tab{
+                width: 80%;
+            }
             width: calc(100% / 12 * 4);
             position: relative;
             .image{
@@ -500,6 +645,10 @@ html{
                 margin: 0 auto;
             }
             h2{
+                @include tab{
+                    line-height: $h40;
+                    top: #{'min(1.5rem,60px)'};
+                }
                 top: $h40;
                 position: absolute;
                 font-size: $fz50;
@@ -519,5 +668,8 @@ html{
     }
 }
 .ftrWrap{
+    @include tab{
+        margin-top: $h80;
+    }
     margin-top: $h120;
 }

@@ -180,6 +180,11 @@ html{
     @include tab{
         margin-top: $h80;
     }
+    &:nth-child(5){
+        @include mob{
+            margin-top: $h40;
+        }
+    }
     &.cntWrap04{
         position: relative;
         z-index: 2;
@@ -333,10 +338,7 @@ html{
                 article{
                     @include flex;
                     @include tab {
-                        margin-top: $h40;
-                    }
-                    @include mob{
-                        margin-top: 0;
+                        margin-top: $h80;
                     }
                     margin-top: $h120;
                     &:nth-child(1){
@@ -349,6 +351,10 @@ html{
                                     height: #{'min(9rem,360px)'};
                                     background-image: url('../images/index.img/cnt01_art01_01.png');
                                     top: #{'min(4rem,160px)'}; left: #{'min(-2.5rem,-100px)'};
+                                    @include mob{
+                                        background-size: contain;
+                                        height: $h120; top: 0; left: 0;
+                                    }
                                 }
                                 &.i2{
                                     width: calc(100% / 6 * 5);
@@ -357,6 +363,10 @@ html{
                                     background-image: url('../images/index.img/cnt01_art01_02.png');
                                     top: $h200; left: 0;
                                     z-index: 1;
+                                    @include mob{
+                                        height: $h200;
+                                        top: 0; left: $h40;
+                                    }
                                 }
                                 &.i3{
                                     background-size: contain;
@@ -364,6 +374,10 @@ html{
                                     width: calc(100% / 6 * 2);
                                     background-image: url('../images/index.img/cnt01_art01_03.png');
                                     top:  #{'min(4rem,160px)'}; right: 30px;
+                                    @include mob{
+                                        height: $h120;
+                                        top: 0; right: #{'min(-0.5rem,-20px)'};
+                                    }
                                 }
                             }
                         }
@@ -393,6 +407,9 @@ html{
                             .image{
                                 position: absolute;
                                 &.i1{
+                                    @include mob{
+                                        top: 0;
+                                    }
                                     width: calc(100% / 6 * 2);
                                     height: $h200;
                                     background-size: contain;
@@ -400,6 +417,11 @@ html{
                                     left: $h40; bottom: #{'min(4rem,160px)'};
                                 }
                                 &.i2{
+                                    @include mob{
+                                        height: $h200;
+                                        background-size: contain;
+                                        top: 0; left: $h20;
+                                    }
                                     width: 100%;
                                     height: #{'min(9rem,360px)'};
                                     background-image: url('../images/index.img/cnt01_art02_02.png');
@@ -407,6 +429,9 @@ html{
                                     z-index: 1;
                                 }
                                 &.i3{
+                                    @include mob{
+                                        top: $h20;
+                                    }
                                     width: calc(100% / 6 * 2);
                                     height: #{'min(4.5rem,180px)'};
                                     background-size: contain;
@@ -437,8 +462,14 @@ html{
                         @include tab{
                             margin-left: 0;
                         }
+                        @include mob{
+                            width: 50%;
+                        }
                         .imgBg{
                             .ovrGrid{
+                                @include mob {
+                                    height: #{'min(4rem,160px)'};
+                                }
                                 height: #{'min(16rem,640px)'};
                                 // background-color: #ccc;
                                 @include bgset;
@@ -451,14 +482,20 @@ html{
                                     background-image: url('../images/index.img/cnt01_artBg01.png');
                                 }
                                 &.ovr02{
-                                    @include tab {}
-                                    margin-right: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
+                                    @include tab {
+                                        margin-right: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
+                                    }
+                                    margin-right: #{'min(calc((100vw - 1080px) / -2),calc((100vw - 80vw) / -2))'};
                                     background-image: url('../images/index.img/cnt01_artBg02.png');
                                 }
                             }
                         }
                     }
                     .texts{
+                        @include mob{
+                            width: 50%;
+                            margin-top: 0;
+                        }
                         width: calc(100% / 12 * 4);
                         margin-top: $h120;
                         font-family: aripp;
@@ -468,6 +505,9 @@ html{
                                 overflow: inherit;
                                 font-size: $fz36;
                             }
+                            @include mob{
+                                font-size: $fz24;
+                            }
                             font-size: #{'min(5em,50px)'};
                             line-height: $h80;
                             height: 0;
@@ -475,12 +515,16 @@ html{
                             transition: all 0.5s;
                             // border-bottom: 1px solid #666;
                             &::after{
+                                @include mob{
+                                    width: 80%;
+                                }
                                 content: '';
                                 display: block;
                                 width: 100%;
                                 height: 1px;
                                 background-color: #666;
                                 margin-top: -5px;
+                                margin: 0 auto;
 
                             }
                         }
@@ -490,6 +534,9 @@ html{
                             line-height: $h40;
                             span{
                                 color: #293d85;
+                            }
+                            @include mob{
+                                font-size: $fz18;
                             }
                         }
                         p{
@@ -514,6 +561,9 @@ html{
                                 height: $h80;
                                 background-image: url('../images/index.img/btn.png');
                                 span{
+                                    @include mob{
+                                        font-size: $fz18;
+                                    }
                                     line-height: $h80;
                                     font-size: $fz24;
                                     text-transform: uppercase;
@@ -530,16 +580,29 @@ html{
         &.cnt02{
             border-top: 1px solid #666;
             border-bottom: 1px solid #666;
+            @include mob{
+                padding-bottom: $h40;
+            }
             padding: $h40 0 $h80;
             header{
+                @include mob{
+                    width: 80%;
+                }
                 width: calc(100% / 12 * 5);
                 margin: 0 auto;
                 .image{
                     background-size: contain;
                     background-image: url('../images/index.img/cnt02_hdr.png');
                     height: $h200;
+                    @include mob{
+                        height: $h120;
+                        padding: $h20 0 $h20;
+                    }
                     padding: #{'min(1.5rem,60px)'} 0 $h40;
                     h2{
+                        @include mob{
+                            line-height: $h40;
+                        }
                         span{
                             color: #293d85;
                         }
@@ -568,6 +631,9 @@ html{
                     }
                 }
                 p{
+                    @include mob{
+                        display: none;
+                    }
                     margin-top: $h20;
                     font-family: 'GangwonEdu_OTFLightA';
                     font-weight: 700;
@@ -579,17 +645,28 @@ html{
                 @include tab {
                     margin-top: $h40;
                 }
+                @include mob{
+                    flex-wrap: wrap;
+                    margin-top: 0;
+                    position: relative;
+                }
                 @include flex;
                 margin-top: $h80;
                 .artImg{
                     @include tab {
                         width: 50%;
                     }
+                    @include mob{
+                        width: 100%;
+                    }
                     width: calc(100% / 12 * 7 - 20px);
                     position: relative;
                     .ovrGrid{
                         @include tab {
                             margin-left: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
+                        }
+                        @include mob {
+                            height: #{'min(8rem,320px)'};
                         }
                         position: relative;
                         margin-left: #{'min(calc((100vw - 1080px) / -2),calc((100vw - 80vw) / -2))'};
@@ -602,6 +679,11 @@ html{
                         @include tab {
                             width: 80%;
                         }
+                        @include mob{
+                            width: 60%;
+                            margin: 0 auto;
+                            top: 0; bottom: 0; left: 0; right: 0; margin: 0 auto;
+                        }
                         width: calc(100% / 7 * 5.5);
                         position: absolute;
                         top: $h40;
@@ -609,6 +691,9 @@ html{
                             @include tab {
                                 height: #{'min(7.5rem,300px)'};
                                 margin-top: $h40;
+                            }
+                            @include mob{
+                                height: #{'min(6rem,240px)'};
                             }
                             width: 100%;
                             height: #{'min(12rem,480px)'};
@@ -628,6 +713,12 @@ html{
                         width: 40%;
                         margin-left: $h40;
                     }
+                    @include mob{
+                        width: 65%;
+                        height: $h200;
+                        margin-top: 0;
+                        margin-left: auto;
+                    }
                     width: calc(100% / 12 * 4 - 20px);
                     font-family: 'GangwonEdu_OTFLightA';
                     font-weight: 700;
@@ -636,8 +727,12 @@ html{
                         position: relative;
                         .txt{
                             @include tab {
-                                height: $h200;
+                                height: #{'min(7rem,280px)'};
                                 margin-top: $h120;
+                            }
+                            @include mob() {
+                                height: #{'min(4rem,160px)'};
+                                margin-top: $h20;
                             }
                             background-color: #fff;
                             position: absolute;
@@ -647,6 +742,10 @@ html{
                                 @include tab {
                                     font-size: $fz24;
                                 }
+                                @include mob {
+                                    font-size: $fz18;
+                                    line-height: $h20;
+                                }
                                 font-size: #{'min(3.4em,34px)'};
                                 line-height: $h40;
                                 border-left: 1px solid #666;
@@ -655,8 +754,14 @@ html{
                             .txtMid{
                                 width: calc(100% / 4 * 3);
                                 @include flex;
-                                margin-top: 40px;
+                                margin-top: $h40;
+                                @include mob{
+                                    margin-top: $h20;
+                                }
                                 h5{
+                                    @include mob{
+                                        font-size: $fz14;
+                                    }
                                     font-size: $fz18;
                                     line-height: $h20;
                                     border-left: 1px solid #666;
@@ -664,17 +769,27 @@ html{
                                 }
                             }
                             .txtBtm{
-                                @include tab {
-                                    display: none;
+                                @include mob{
+                                    width: calc(100% / 4 * 2);
+                                    margin-top: 0;
+                                    margin: 0 auto;
                                 }
                                 margin-top: $h40;
                                 p{
+                                    @include tab {
+                                        display: none;
+                                    }
                                     border-left: 1px solid #666;
                                     padding-left: $h20;
                                     font-size: $fz18;
                                     line-height: $h20;
                                 }
                                 .btn{
+                                    @include mob{
+                                        width: 100%;
+                                        margin-top: 0;
+                                        margin-left: 0;
+                                    }
                                     width: calc(100% / 4 * 1.5);
                                     margin-top: $h20;
                                     margin-left: $h20;
@@ -699,10 +814,18 @@ html{
                     }
                 }
                 .btn{
+                    position: relative;
+                    @include mob{
+                        width: 20%;
+                        margin-top: #{'min(-1rem,-40px)'};
+                    }
                     width: calc(100% / 12);
-                    margin: auto 0;
                     margin-left: 10px;
+                    margin: auto 0;
                     .image{
+                        @include mob {
+                            height: $h40;
+                        }
                         cursor: pointer;
                         background-size: contain;
                         background-image: url('../images/index.img/slide_btn.png');
@@ -722,6 +845,9 @@ html{
                     }
                 }
                 p{
+                    @include mob {
+                        display: none;
+                    }
                     font-family: 'GangwonEdu_OTFLightA';
                     font-size: $fz24;
                     line-height: $h40;
@@ -732,11 +858,20 @@ html{
                 margin-top: $h40;
                 @include flex;
                 article{
+                    @include mob{
+                        width: 100%;
+                        &:nth-child(1){
+                            display: none;
+                        }
+                    }
                     width: 50%;
                     margin: 0px 10px;
                     .image{
                         @include tab {
                             height: #{'min(5rem,200px)'};
+                        }
+                        @include mob() {
+                            height: #{'min(6rem,240px)'};
                         }
                         height: #{'min(7rem,280px)'};
                         @for $i from 1 through 2{
@@ -748,6 +883,9 @@ html{
                 }
             }
             .btn{
+                @include mob {
+                    width: calc(100% / 4 * 1);
+                }
                 width: calc(100% / 12 * 2);
                 margin: 0 auto;
                 margin-top: #{'min(1.5rem,60px)'};

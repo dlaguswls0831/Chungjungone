@@ -16,6 +16,12 @@ $h200 : #{'min(5rem,200px)'};
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'HS-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @mixin font($fontname,$url){
     @font-face {
@@ -100,18 +106,19 @@ html{
             @include flex;
             width: calc(100% / 12 * 6);
             line-height: $h80;
-            font-family: 'oj';
+            font-family: 'HS-Regular';
+            font-weight: 700;
             text-transform: uppercase;
             .navLeft{
                 @include flex;
                 width: calc(100% / 6 * 4);
-                font-size: $fz14;
+                font-size: #{'min(2em,20px)'};
                 h4{
                     transition: all 0.5s;
                     &:hover{
                         color: #293d85;
                         text-shadow: 2px 2px 2px #ccc;
-                        font-size: #{'min(1.8em,18px)'};
+                        font-size: $fz24;
                         font-weight: 700;
                     }
                 }
@@ -180,7 +187,7 @@ html{
             font-size: $fz14;
             line-height: $h80;
             text-transform: uppercase;
-            font-family: noto;
+            font-family: 'HS-Regular';
             color: #222;
             h4{
                 transition: all 0.5s;
@@ -235,6 +242,9 @@ html{
 
 // ftr
 .ftrWrap{
+    @include mob {
+        padding: 0 0 $h40;
+    }
     background-color: #e3e3e3;
     padding: $h40 0 $h80;
     footer{
@@ -251,6 +261,9 @@ html{
                     width: calc(100% / 8 * 5);
                     margin-left: auto;
                     margin-right: $h40;
+                }
+                @include mob{
+                    display: none;
                 }
                 width: calc(100% / 12 * 6);
                 h4{
@@ -282,7 +295,16 @@ html{
             margin-top: 40px;
             font-size: $fz14;
             line-height: $h40;
+            @include mob{
+                flex-wrap: wrap;
+                flex-direction: column-reverse;
+            }
             .logo{
+                @include mob{
+                    width: 100%;
+                    margin-top: $h20;
+                    height: $h80;
+                }
                 width: calc(100% / 12 * 3);
                 height: $h120;
                 @include bgset;
@@ -292,6 +314,9 @@ html{
             .info{
                 @include tab{
                     width: calc(100% / 8 * 5.5);
+                }
+                @include mob{
+                    width: 100%;
                 }
                 width: calc(100% / 12 * 8.5);
                 .top{
@@ -312,6 +337,9 @@ html{
                     @include tab {
                         justify-content: space-around
                     }
+                    @include mob{
+                        flex-wrap: wrap;
+                    }
                     @include flex;
                     margin-top: 10px;
                     li{
@@ -320,11 +348,20 @@ html{
                                 display: none;
                             }
                         }
+                        @include mob{
+                            border-left: none;
+                            width: 100%;
+                            text-align: right;
+                            padding: 0;
+                        }
                         border-left: 1px solid #666;
                         padding: 0 10px;
                         &:nth-child(1){
                             @include tab{
                                 border-left: 1px solid #666;
+                                @include mob{
+                                    border-left: none;
+                                }
                             }
                             border-left: none;
                         }
@@ -338,6 +375,10 @@ html{
                                 margin-left: 5px;
                                 width: 80%;
                             }
+                            @include mob {
+                                text-align: right;
+                                width: 100%;
+                            }
                             width: calc(100% / 8.5 * 3.5);
                             color: #666;
                             padding-left: 10px;
@@ -347,6 +388,9 @@ html{
                         &:nth-child(2){
                             width: calc(100% / 8.5 * 1.5);
                             @include flex;
+                            @include mob{
+                               display: none;
+                            }
                             .image{
                                 @include tab {
                                     margin-top: $h20;
