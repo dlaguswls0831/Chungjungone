@@ -548,6 +548,7 @@ html{
                 .artTxt{
                     @include tab {
                         width: 40%;
+                        margin-left: $h40;
                     }
                     width: calc(100% / 12 * 4 - 20px);
                     font-family: 'GangwonEdu_OTFLightA';

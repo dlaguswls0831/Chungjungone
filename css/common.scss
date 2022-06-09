@@ -237,7 +237,7 @@ html{
                 @include tab{
                     width: calc(100% / 8 * 5);
                     margin-left: auto;
-                    margin-right: $h90;
+                    margin-right: $h40;
                 }
                 width: calc(100% / 12 * 6);
                 h4{
@@ -295,6 +295,9 @@ html{
                     }
                 }
                 .mid{
+                    @include tab {
+                        justify-content: space-around
+                    }
                     @include flex;
                     margin-top: 10px;
                     li{
@@ -317,6 +320,10 @@ html{
                     @include flex;
                     li{
                         &:nth-child(1){
+                            @include tab {
+                                margin-left: 5px;
+                                width: 80%;
+                            }
                             width: calc(100% / 8.5 * 3.5);
                             color: #666;
                             padding-left: 10px;
@@ -327,6 +334,9 @@ html{
                             width: calc(100% / 8.5 * 1.5);
                             @include flex;
                             .image{
+                                @include tab {
+                                    margin-top: $h20;
+                                }
                                 width: calc(100% / 3);
                                 height: $h40;
                                 background-size: contain;
