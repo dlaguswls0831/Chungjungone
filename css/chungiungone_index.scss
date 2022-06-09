@@ -123,48 +123,35 @@ html{
 }
 
 @keyframes ani{
-    0%{
-        transform : rotate(1deg);
-    }
-    50%{
-        transform : rotate(20deg);
-    }
-    100%{
-        transform : rotate(1deg);
-    }
+    0%{transform : rotate(1deg);}
+    50%{transform : rotate(20deg);}
+    100%{transform : rotate(1deg);}
 } 
 
 @keyframes mo{
-    0%{
-        transform : rotate(0deg);
-    }
-    50%{
-        transform : rotate(48deg);
-    }
-    100%{
-        transform : rotate(0deg);
-    }
+    0%{transform : rotate(0deg);}
+    50%{transform : rotate(48deg);}
+    100%{transform : rotate(0deg);}
 } 
 
 @keyframes mov{
-    0%{
-        transform : rotate(280deg);
-    }
-    50%{
-        transform : rotate(300deg);
-    }
-    100%{
-        transform : rotate(280deg);
-    }
+    0%{transform : rotate(280deg);}
+    50%{transform : rotate(300deg);}
+    100%{transform : rotate(280deg);}
 } 
 
 // cnt
 .cntWrap{
     margin-top: $h120;
+    overflow: hidden;
     &.cntWrap04{
         position: relative;
         z-index: 2;
         .Wrapimg{
+            @include tab {
+                bottom: 0;
+                height: #{'min(6rem,240px)'};
+            }
             width: 100%;
             position: absolute;
             height: #{'min(8rem,320px)'};
@@ -174,10 +161,16 @@ html{
             background-image: url('../images/index.img/cnt04_Bg.png');
         }
         background-color: #dfdfdf;
+        @include tab {
+            padding-bottom: $h40;
+        }
         padding: $h40 0 $h120;
     }
     .content{
         @include grid('pc');
+        @include tab {
+            @include grid('tab');
+        }
         // cnt01
         &.cnt01{
             header{
@@ -185,6 +178,9 @@ html{
                 border-bottom: 1px solid #666;
                 position: relative;
                 .images{
+                    @include tab {
+                        opacity: 1;
+                    }
                     opacity: 0;
                     transition: opacity 0.5s;
                     .image{
@@ -304,7 +300,13 @@ html{
                         }
                         .texts{
                             p{
+                                @include tab {
+                                    margin: 0 auto;
+                                    margin-top: $h40;
+                                    height: #{'min(1.5rem,60px)'};
+                                }
                                 height: #{'min(4.5rem,180px)'};
+                                overflow: hidden;
                             }
                         }
                     }
@@ -313,6 +315,9 @@ html{
                         .images{
                             position: relative;
                             margin-right: -90%;
+                            @include tab{
+                                margin-right: 0;
+                            }
                             .image{
                                 position: absolute;
                                 &.i1{
@@ -341,13 +346,22 @@ html{
                         .texts{
                             direction: ltr;
                             p{
+                                @include tab {
+                                    margin: 0 auto;
+                                    margin-top: $h40;
+                                    height: #{'min(1.5rem,60px)'};
+                                }
                                 height: #{'min(4rem,160px)'};
+                                overflow: hidden;
                             }
                         }
                     }
                     .images{
                         width: calc(100% / 12 * 6);
                         margin-left: -150%;
+                        @include tab{
+                            margin-left: 0;
+                        }
                         .imgBg{
                             .ovrGrid{
                                 height: #{'min(16rem,640px)'};
@@ -355,11 +369,15 @@ html{
                                 @include bgset;
                                 background-size: contain;
                                 &.ovr01{
+                                    @include tab {
+                                        margin-left: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
+                                    }
                                     margin-left: #{'min(calc((100vw - 1080px) / -2),calc((100vw - 80vw) / -2))'};
                                     background-image: url('../images/index.img/cnt01_artBg01.png');
                                 }
                                 &.ovr02{
-                                    margin-right: #{'min(calc((100vw - 1080px) / -2),calc((100vw - 80vw) / -2))'};
+                                    @include tab {}
+                                    margin-right: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
                                     background-image: url('../images/index.img/cnt01_artBg02.png');
                                 }
                             }
@@ -371,6 +389,10 @@ html{
                         font-family: aripp;
                         text-align: center;
                         h3{
+                            @include tab {
+                                overflow: inherit;
+                                height: $h40;
+                            }
                             font-size: #{'min(5em,50px)'};
                             line-height: $h80;
                             height: 0;
@@ -479,12 +501,21 @@ html{
                 }
             }
             section{
+                @include tab {
+                    margin-top: $h40;
+                }
                 @include flex;
                 margin-top: $h80;
                 .artImg{
+                    @include tab {
+                        width: 50%;
+                    }
                     width: calc(100% / 12 * 7 - 20px);
                     position: relative;
                     .ovrGrid{
+                        @include tab {
+                            margin-left: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
+                        }
                         position: relative;
                         margin-left: #{'min(calc((100vw - 1080px) / -2),calc((100vw - 80vw) / -2))'};
                         height: #{'min(13.75rem,550px)'};
@@ -497,6 +528,10 @@ html{
                         position: absolute;
                         top: $h40;
                         .image{
+                            @include tab {
+                                height: #{'min(8.5rem,340px)'};
+                                margin-top: $h40;
+                            }
                             width: 100%;
                             height: #{'min(12rem,480px)'};
                             background-color: #ccc;
@@ -511,6 +546,9 @@ html{
                     }
                 }
                 .artTxt{
+                    @include tab {
+                        width: 40%;
+                    }
                     width: calc(100% / 12 * 4 - 20px);
                     font-family: 'GangwonEdu_OTFLightA';
                     font-weight: 700;
@@ -518,6 +556,10 @@ html{
                     .texts{
                         position: relative;
                         .txt{
+                            @include tab {
+                                height: $h200;
+                                margin-top: $h120;
+                            }
                             background-color: #fff;
                             position: absolute;
                             height: #{'min(12.5rem,500px)'};
@@ -540,6 +582,9 @@ html{
                                 }
                             }
                             .txtBtm{
+                                @include tab {
+                                    display: none;
+                                }
                                 margin-top: $h40;
                                 p{
                                     border-left: 1px solid #666;
@@ -608,6 +653,9 @@ html{
                     width: 50%;
                     margin: 0px 10px;
                     .image{
+                        @include tab {
+                            height: #{'min(6rem,240px)'};
+                        }
                         height: #{'min(7rem,280px)'};
                         @for $i from 1 through 2{
                             &.i#{$i}{
