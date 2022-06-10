@@ -242,9 +242,6 @@ html{
 
 // ftr
 .ftrWrap{
-    @include mob {
-        padding: 0 0 $h40;
-    }
     background-color: #e3e3e3;
     padding: $h40 0 $h80;
     footer{
