@@ -214,8 +214,9 @@ html{
                         width: calc(100% / 8 * 5);
                     }
                     @include mob{
-                        width: calc(100% / 4 * 3);
-                        height: $h200;
+                        width: calc(100% / 4 * 3.5);
+                        height: #{'min(6rem,240px)'};
+                        border-radius: 40px;
                     }
                     width: calc(100% / 12 * 7);
                     height: #{'min(10rem,400px)'};
@@ -235,9 +236,9 @@ html{
                     @include mob{
                         width: 80%;
                         height: $h160;
-                        border-radius: 40px;
+                        border-radius: 20px;
                         @include flex;
-                        padding-top: $h40;
+                        padding-top: $h20;
                         padding-bottom: $h20;
 
                     }
@@ -322,6 +323,7 @@ html{
                             }
                             @include mob{
                                 font-size: #{'min(1.2em,12px)'};
+                                margin-top: 10px;
                             }
                             margin-top: $h20;
                             text-align: right;
@@ -562,6 +564,9 @@ html{
                 h3{
                     @include tab{
                         font-size: $fz14;
+                    }
+                    @include mob{
+                        display: none;
                     }
                     font-family: 'GangwonEdu_OTFLightA';
                     font-size: #{'min(2em,20px)'};

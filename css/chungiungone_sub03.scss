@@ -50,6 +50,11 @@ $h200 : #{'min(5rem,200px)'};
         @content;
     }
 }
+@mixin mob {
+    @media (max-width: 420px) and (min-width: 0px){
+        @content;
+    }
+}
 
 @mixin flex {
     display: flex;
@@ -63,9 +68,21 @@ $h200 : #{'min(5rem,200px)'};
 
 html{
     font-size: 3vw;
+    @include tab{
+        font-size: 3.5vw;
+    }
+    @include mob{
+        font-size: 8.5vw;
+    }
     body{
         font-size: 0.7vw;
         color: #222;
+        @include tab{
+            font-size: 0.8vw;
+        }
+        @include mob{
+            font-size: 2.1vw;
+        }
     }
 }
 .image{
@@ -75,11 +92,21 @@ html{
 .mainWrap{
     position: relative;
     .image{
+        @include tab{
+            height: #{'min(10rem,400px)'};
+        }
+        @include tab{
+            height: #{'min(8rem,320px)'};
+        }
         background-image: url('../images/sub03_img/platter-g3df69e34e_1920.jpg');
         filter: brightness(45%);
         height: #{'min(20rem,800px)'};
     }
     main{
+        @include tab{
+            @include grid('tab');
+            margin-top: #{'min(4rem,160px)'};
+        }
         color: #fff;
         @include grid('pc');
         position: absolute;
@@ -87,11 +114,21 @@ html{
         text-align: center;
         margin-top: #{'min(8.75rem,350px)'};
         h2{
+            @include tab{
+                font-size: $fz36;
+                line-height: $h40;
+            }
             font-family: 'SuseongHyejeong';
             font-size: #{'min(8em,80px)'};
             line-height: $h80;
         }
         h5{
+            @include tab{
+                font-size: $fz24;
+            }
+            @include mob{
+                display: none;
+            }
             font-family: 'noto';
             margin-top: $h40;
             font-size: #{'min(3em,30px)'};
@@ -106,9 +143,15 @@ html{
     }
     .content{
         @include grid('pc');
+        @include tab{
+            @include grid('tab');
+        }
         header{
             position: relative;
             .image{
+                @include mob{
+                    width: 50%;
+                }
                 width: calc(100% / 12 * 3.8);
                 height: #{'min(4rem,160px)'};
                 background-size: contain;
@@ -131,6 +174,9 @@ html{
             border-bottom: 1px solid #ccc;
             header{
                 h2{
+                    @include mob{
+                        font-size: $fz36;
+                    }
                     font-size: #{'min(5em,50px)'};
                     font-family: 'aripp';
                     top: 35%;
@@ -147,9 +193,23 @@ html{
                     }
                     .artBtm{
                         @include flex;
+                        @include mob{
+                            flex-wrap: wrap
+                        }
                         .txtLeft{
+                            @include mob{
+                                width: 100%;
+                                text-align: center;
+                                margin: 0 auto;
+                            }
                             width: calc(100% / 10 * 6);
                             h3{
+                                @include tab{
+                                    font-size: $fz24;
+                                }
+                                @include mob{
+                                    margin-left: 0;
+                                }
                                 font-family: 'aripp';
                                 font-size: #{'min(4em,40px)'};
                                 margin-left: #{'min(1.75rem,70px)'};
@@ -160,8 +220,15 @@ html{
                             }
                         }
                         .txtRight{
+                            @include mob{
+                                width: 50%;
+                                margin: 0 auto;
+                            }
                             width: calc(100% / 10 * 3);
                             .sns{
+                                @include tab{
+                                    display: none;
+                                }
                                 width: calc(100% / 3 * 2);
                                 @include flex;
                                 margin-top: $h20;
@@ -179,6 +246,14 @@ html{
                                 }
                             }
                             .text{
+                                @include tab{
+                                    font-size: $fz14;
+                                }
+                                @include mob{
+                                    width: 100%;
+                                    margin-left: 0;
+                                    margin-top: $h20;
+                                }
                                 @include flex;
                                 width: calc(100% / 3 * 2);
                                 margin-top: $h40;
@@ -189,6 +264,18 @@ html{
                                 line-height: $h40;
                             }
                             .btn{
+                                @include tab{
+                                    margin-top: $h20;
+                                    span{
+                                        display: none;
+                                    }
+                                }
+                                @include mob{
+                                    margin-left: 0;
+                                    width: 60%;
+                                    margin: 0 auto;
+                                    margin-top: $h20;
+                                }
                                 width: calc(100% / 3 * 2);
                                 margin-top: $h40;
                                 margin-left: auto;
@@ -223,12 +310,21 @@ html{
                 margin-top: $h40;
                 overflow: hidden;
                 .artGroup{
+                    @include tab{
+                        width: 600%;
+                    }
                     width: 300%;
                     @include flex;
                     article{
                         width: calc(100% / 6 - 20px);
                         margin: 0px 10px;
                         .image{
+                            @include tab{
+                                height: #{'min(8rem,320px)'};
+                            }
+                            @include mob{
+                                height: $h200;
+                            }
                             height: #{'min(6.5rem,260px)'};
                             @for $i from 1 through 6{
                                 &.i#{$i}{
@@ -243,6 +339,12 @@ html{
                 @include flex;
                 width: 100%;
                 position: absolute;
+                @include tab{
+                    bottom: $h120;
+                }
+                @include mob{
+                    bottom: $h80;
+                }
                 bottom: $h90;
                 .image{
                     width: 5%;
