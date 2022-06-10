@@ -11,7 +11,6 @@ $(function(){
             function tt(tt){
                 t++;
                 num = ann[t-1]
-                console.log(num);
                 $('main .title>h2>span').eq(t-1).css('opacity','1');
             };
             // 내가 정해준 시간동안 한번 실행
@@ -21,7 +20,6 @@ $(function(){
     if(wd > 1024){
         $(window).scroll(function(){
             var srl = $(window).scrollTop();
-            console.log(srl);
             if(srl>=600){
                 $('.cnt01 .images').css('opacity','1');
             }
