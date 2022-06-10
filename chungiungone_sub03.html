@@ -12,6 +12,40 @@
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/jquery-ui.min.js"></script>
     <script src="./js/common.js"></script>
+    <script>
+        $(function(){
+            var wd = $(window).width();
+            var mv=0;
+            if(wd > 1024){
+                mv=50;
+                $('.cnt02 .btns>.image.i1').click(left);
+                $('.cnt02 .btns>.image.i2').click(right);
+            }else{
+                mv=100;
+                $('.cnt02 .btns>.image.i1').click(left);
+                $('.cnt02 .btns>.image.i2').click(right);
+            }
+            $('.cnt02 .artGroup').find('article:last').prependTo('.cnt02 .artGroup');
+            $('.cnt02 .artGroup').css('margin-left',-mv+'%');
+
+            function left(){
+                $('.cnt02 .artGroup').stop().animate({
+                    marginLeft : 0
+                },400,function(){
+                     $('.cnt02 .artGroup').find('article:last').prependTo('.cnt02 .artGroup');
+                     $('.cnt02 .artGroup').css('margin-left',-mv+'%');
+                });
+            }
+            function right(){
+                $('.cnt02 .artGroup').stop().animate({
+                    marginLeft : 2*-mv+'%'
+                },400,function(){
+                     $('.cnt02 .artGroup').find('article:first').appendTo('.cnt02 .artGroup');
+                     $('.cnt02 .artGroup').css('margin-left',-mv+'%');
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <!-- hdr -->
